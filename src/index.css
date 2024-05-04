@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* You can try replacing pink with blue (a light blue ) */
+:root { 
+  
+  .theme-1 { 
+    --main-background: #FFFFFF ; 
+    --sec-color: #FF335F ; 
+    --third-color:#43A9A3 ;
+    --fourth-color: #ECEEEF ; 
+    --text-color: #818A91 ;
+    --rare-color : #373A3C ;
+    --scrollbar-color: #ffffff;
+  }
+  .theme-2 { 
+    --main-background: #0E141B ; 
+    --sec-color: #F74F73 ; 
+    --third-color:#43A9A3 ;
+    --fourth-color: #252526 ; 
+    --text-color: #c9c9c9 ;
+    --rare-color : #FFFFFF ;
+    --scrollbar-color: #3a3a3b;
+  }
+  .theme-3 { 
+    --main-background: #FFFFFE ; 
+    --sec-color: #FF9D00 ; 
+    --third-color:#BAE8E8 ;
+    --fourth-color: #E3F6F5 ; 
+    --text-color: #2D334A ;
+    --rare-color : #272343 ;
+    --scrollbar-color: #f9ffff;
+  }
+  .theme-4 { 
+    --main-background: #55423D ; 
+    --sec-color: #F3AB87 ; 
+    --third-color:#E78FB3 ;
+    --fourth-color: #271C19 ; 
+    --text-color: #FFC0AD ;
+    --rare-color : #FFFFFE ;
+    --scrollbar-color: #4b3832;
+  }
+  .theme-5 { 
+    --main-background: #FEF6E4 ; 
+    --sec-color: #F582AE ; 
+    --third-color:#8BD3DD ;
+    --fourth-color: #F3D2C1 ; 
+    --text-color: #006E8A ;
+    --rare-color : #172C66 ;
+    --scrollbar-color: #ffe5d8;
+  }
+  .theme-6 { 
+    --main-background: #16161A ; 
+    --sec-color: #7F5AF0 ; 
+    --third-color:#2CB67D ;
+    --fourth-color: #383A61 ; 
+    --text-color: #94A1B2 ;
+    --rare-color : #FFFFFE ;
+    --scrollbar-color: #50527d;
+  }
+  .theme-7 { 
+    --main-background: #FAFBF5 ; 
+    --sec-color: #99C221 ; 
+    --third-color:#E55812 ;
+    --fourth-color: #E8E0D9 ; 
+    --text-color: #757D84 ;
+    --rare-color : #41474C ;
+    --scrollbar-color: #fef6ef;
+  }
+  .theme-8 { 
+    --main-background: #140527 ; 
+    --sec-color: #49F5F7 ; 
+    --third-color:#01C317 ;
+    --fourth-color: #730292 ; 
+    --text-color: #fafa55 ;
+    /* --text-color: #FF464D ; */
+    --rare-color : #FEFF00 ;
+    --scrollbar-color: #9715bb;
+  }
+  .theme-9 { 
+    --main-background: #FCDDD4 ; 
+    --sec-color: #146CAA ; 
+    --third-color:#FB9F13 ;
+    --fourth-color: #F1797C ; 
+    --text-color: #B62B2B ;
+    --rare-color :  #4B1313 ;
+    --scrollbar-color: #ff989a;
+  }
+  html { 
+    scroll-behavior: smooth;
+  }
+  .title-font { 
+    font-family: 'apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol'
+  }
+  .title-font-lobster { 
+    font-family: "Lobster", sans-serif;
+  }
+  .body-font { 
+    font-family: "Inter", sans-serif;
+  }
+  
+  .trans { 
+    @apply transition-all duration-[400ms] ;
+  }
+  .link { 
+    @apply relative  before:absolute    before:-bottom-0 before:-left-0 before:w-full  before:h-[6px] before:-z-10 z-10   before:bg-fourth-color  overflow-x-hidden before:-translate-x-[101%] hover:before:translate-x-0 before:transition-all before:duration-[400ms] ;
+  }
+  .linkMenu { 
+    @apply relative  before:absolute before:-bottom-0 before:-left-3/4 before:w-full  before:h-[12px] before:-z-10 z-10   before:bg-fourth-color   before:-translate-x-[101%] hover:before:translate-x-0 before:transition-all before:duration-[400ms] ;
+  }
+  .active { 
+    @apply before:bg-sec-color before:translate-x-0
+  }
+  .width { 
+    @apply w-[90%] mx-auto max-sm:w-[90%] ;
+  }
+  .space-up { 
+    @apply mt-24 ;
+  }
+  .titleLinks { 
+    @apply relative before:absolute    before:-bottom-0 before:-left-0 before:w-full  before:h-[12px] before:-z-10   before:bg-fourth-color   before:transition-all before:duration-[400ms]  after:absolute     after:-bottom-0 after:-left-1 hover:after:left-0 after:w-full  after:h-[12px] after:-z-10 z-10  overflow-x-hidden after:-translate-x-full hover:after:translate-x-0 after:transition-all after:duration-[400ms];
+  }
+  .activeTheme { 
+    @apply border-[3px] border-sec-color  hover:scale-100 hover:shadow-none  ;
+  }
+
+  .themeQueryHandle { 
+    @apply max-[345px]:w-[460%] max-[370px]:w-[430%] max-[400px]:w-[400%] max-[445px]:w-[370%] max-[500px]:w-[340%] max-[520px]:w-[320%]  max-[595px]:w-[280%] max-[670px]:w-[240%] max-[790px]:w-[210%] max-[885px]:w-[180%] max-[995px]:w-[155%] max-[1075px]:w-[140%] max-[1290px]:w-[130%] ;
+  }
+  
+}
