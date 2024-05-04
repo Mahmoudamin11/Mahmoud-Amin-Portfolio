@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 
 
 const Menu = () => {
-    const {getOpenedPage, getCurrTheme, openMenu, menuOpen} = useCont();
+    const {getOpenedPage, getCurrTheme, openMenu} = useCont();
     const [rotate, setrotate] = useState(false);
     useEffect(() => { 
         if (!rotate)
