@@ -24,7 +24,7 @@ type child = {
 }
 export function PortfolioContext({children}:child) { 
     const [themeChangerOpen, setThemeChangerOpen] = useState(0);
-    const [openedPage, setopenedPage] = useState("home");
+    const [openedPage, setopenedPage] = useState("");
     const [currTheme, setcurrTheme] = useState(2);
     const location = useLocation();
     const [imgNumber, setImgNumber] = useState([ 1,1,1,1,1,1 ]);
@@ -77,6 +77,8 @@ export function PortfolioContext({children}:child) {
     }, [currTheme])
     useEffect(() => { 
         let page = location.pathname.substring(1);
+        if (page == "")
+            page = "home"
         changeOpenedPage(page);
     }, [location])
 

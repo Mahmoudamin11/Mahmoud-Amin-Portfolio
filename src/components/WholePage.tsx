@@ -16,7 +16,7 @@ export const WholePage = () => {
       
       <AnimatePresence>
         <Routes location={loc} key={loc.pathname}>
-          <Route path="/home" element = {<Home />} />
+          <Route path="/" element = {<Home />} />
           <Route path="/portfolio" element = {<Portfolio />} />
           <Route path="/about" element = {<About />} />
         </Routes>

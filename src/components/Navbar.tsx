@@ -19,7 +19,7 @@ const Navbar = () => {
             {/* Try to get an img that only showing the face*/}
             <img src={me} alt="Mhamoud Amin" className='rounded-full w-12 h-12 border-2 border-main-text-color ' />
             <p className='flex gap-1 items-center'>
-                <Link to="/home" className={` group-hover:text-sec-color ${getCurrTheme() == 9 ? "cursor-lobsterHover" : "cursor-pointer"} trans font-bold max-[500px]:text-sm`}>Mahmoud Amin</Link>
+                <Link to="/" className={` group-hover:text-sec-color ${getCurrTheme() == 9 ? "cursor-lobsterHover" : "cursor-pointer"} trans font-bold max-[500px]:text-sm`}>Mahmoud Amin</Link>
                 <span>
                     {/* Icon if correct  */}
                     <FontAwesomeIcon icon={faCircleCheck} className={`${ getCurrTheme() == 8 ? "animate-rainbowAnimateColors" : "text-third-color"}`} />
@@ -27,9 +27,8 @@ const Navbar = () => {
             </p>
         </div>
 
-        {/* <FontAwesomeIcon icon={faXmark} className="text-rare-color text-2xl font-light" /> */}
         <ul className='flex gap-12 items-center max-[800px]:hidden'>
-            <Link to="/home" className={`link py-4  ${getOpenedPage() == "home" ? "active" : ""} flex ${getCurrTheme() == 9 ? "cursor-lobsterHover" : "cursor-pointer"}  gap-2 items-center`}>
+            <Link to="/" className={`link py-4  ${getOpenedPage() == "home" ? "active" : ""} flex ${getCurrTheme() == 9 ? "cursor-lobsterHover" : "cursor-pointer"}  gap-2 items-center`}>
               <span className='font-bold text-[16px]'>01</span>
               <span className=' text-main-text-color font-bold text-[16px]'>home</span>
             </Link>
