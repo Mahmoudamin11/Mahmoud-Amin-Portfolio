@@ -22,15 +22,41 @@ export function useCont() {
 type child = { 
     children: ReactNode ;
 }
+
+// declare the localStorage 
+// if we didn't store it return default value 2 => the dark theme 
+const themeStore = localStorage.getItem("theme") ? JSON.parse(localStorage.getItem("theme")!) : 2 ; 
+
 export function PortfolioContext({children}:child) { 
     const [themeChangerOpen, setThemeChangerOpen] = useState(0);
     const [openedPage, setopenedPage] = useState("");
-    const [currTheme, setcurrTheme] = useState(2);
+    const [currTheme, setcurrTheme] = useState<number>(themeStore);
     const location = useLocation();
     const [imgNumber, setImgNumber] = useState([ 1,1,1,1,1,1 ]);
     
     const [menuOpen, setmenuOpen] = useState(false);
     const [toggleMark, settoggleMark] = useState(false);
+    useEffect(() => { 
+        if (localStorage.getItem("theme"))
+            document.body.classList.add(`theme-${currTheme}`);
+        else { 
+            document.body.classList.add(`theme-2`);
+        }
+        console.log(
+            JSON.parse(localStorage.getItem("theme")!), " ", currTheme
+        );
+        
+    }, [])
+
+    useEffect(() => { 
+        if (currTheme == 9) { 
+            document.body.classList.add("cursor-lobster")
+            
+        }
+        else { 
+            document.body.classList.remove("cursor-lobster")
+        }
+    } ,[currTheme])
 
     const openMenu = () => { 
         if (getThemeChangerState() == 1) { 
@@ -66,15 +92,7 @@ export function PortfolioContext({children}:child) {
             }
         }
     }
-    useEffect(() => { 
-        if (currTheme == 9) { 
-            document.body.classList.add("cursor-lobster")
-            
-        }
-        else { 
-            document.body.classList.remove("cursor-lobster")
-        }
-    }, [currTheme])
+    
     useEffect(() => { 
         let page = location.pathname.substring(1);
         if (page == "")
@@ -104,6 +122,7 @@ export function PortfolioContext({children}:child) {
             document.body.classList.add(`theme-${id}`);
             setcurrTheme(id);
         }
+        localStorage.setItem("theme", JSON.stringify(id));
     }
     const getCurrTheme = () => { 
         return currTheme ;
@@ -146,10 +165,12 @@ export function PortfolioContext({children}:child) {
     const getImgNumber = (id:number) => { 
         return imgNumber[id-1];
     }
+    
     return( 
         <portContext.Provider value={
             {toggleThemeChangerState,getThemeChangerState, changeTheme, getCurrTheme, 
              changeOpenedPage, getOpenedPage, imgNumber, changeImg, getImgNumber, openMenu, toggleMark, menuOpen
+             ,
             }}>
             {children}
         </portContext.Provider>

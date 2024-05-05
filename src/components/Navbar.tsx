@@ -19,7 +19,7 @@ const Navbar = () => {
             {/* Try to get an img that only showing the face*/}
             <img src={me} alt="Mhamoud Amin" className='rounded-full w-12 h-12 border-2 border-main-text-color ' />
             <p className='flex gap-1 items-center'>
-                <Link to="/" className={` group-hover:text-sec-color ${getCurrTheme() == 9 ? "cursor-lobsterHover" : "cursor-pointer"} trans font-bold max-[500px]:text-sm`}>Mahmoud Amin</Link>
+                <Link to="/about" className={` group-hover:text-sec-color ${getCurrTheme() == 9 ? "cursor-lobsterHover" : "cursor-pointer"} trans font-bold max-[500px]:text-sm`}>Mahmoud Amin</Link>
                 <span>
                     {/* Icon if correct  */}
                     <FontAwesomeIcon icon={faCircleCheck} className={`${ getCurrTheme() == 8 ? "animate-rainbowAnimateColors" : "text-third-color"}`} />

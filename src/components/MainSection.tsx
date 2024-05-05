@@ -4,14 +4,16 @@ import { useCont } from "../context/PortfolioContext"
 import MovingBalls from "../utilities/MovingBalls";
 
 const MainSection = () => {
+
+
   const {getCurrTheme} = useCont();
   return (
-    <div className='relative flex flex-col width space-up'>
+    <div  id="mainSection" className='relative flex flex-col width space-up '>
       {getCurrTheme() != 8 && <MovingBalls />}
       <Link to="/about" className={`z-20 text-sec-color uppercase font-semibold text-xl ${getCurrTheme() == 9 ? "cursor-lobsterHover" : "cursor-pointer"} z-10 w-fit trans hover:opacity-90`}>Hello, My name is Mahmoud</Link>
-      <h1 className={`z-20  font-bold ${getCurrTheme() == 9  ? "title-font-lobster" : "title-font"} text-rare-color text-[110px] max-[500px]:text-[90px] -mt-4 max-[500px]:mt-0 z-0`}>
+      <h1 className={`z-20  font-bold ${getCurrTheme() == 9  ? "title-font-lobster" : "title-font"} text-rare-color text-[110px] max-[500px]:text-[85px] -mt-4 max-[500px]:mt-0 z-0`}>
         I build <span className="max-[500px]:hidden">websites.</span></h1>
-        <h1 className={`z-20 max-[500px]:block hidden font-bold ${getCurrTheme() == 9  ? "title-font-lobster" : "title-font"} text-rare-color text-[110px] max-[500px]:text-[90px] -mt-10 z-0`}>websites.</h1>
+        <h1 className={`z-20 max-[500px]:block hidden font-bold ${getCurrTheme() == 9  ? "title-font-lobster" : "title-font"} text-rare-color text-[110px] max-[500px]:text-[85px] -mt-10 z-0`}>websites.</h1>
       <p className="z-20 text-3xl max-[535px]:text-xl text-text-color mt-5 ">
         I'm a front end web developer and designer based in Cairo, Egypt.
       </p>

@@ -23,7 +23,7 @@ export default {
         'card' : 'var(--main-gray) 0px 5px 15px'
       },
       backgroundImage : {
-        rainbow : "url('./src/assets/rainbow background.gif')"
+        rainbow : "url('/src/assets/rainbow background.gif')"
       },
       keyframes: { 
         "rainbowAnimateColors" : {

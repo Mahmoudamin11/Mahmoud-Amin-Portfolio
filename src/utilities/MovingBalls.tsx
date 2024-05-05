@@ -10,6 +10,7 @@ const MovingBalls = () => {
     
     useEffect(() => { 
         for(let i = 1 ; i <= 45; i++) { 
+            
             let ball = document.getElementById(`ball${i}`);
             let topRand =  Math.floor(Math.random() * 101);
             let leftRand ;
@@ -24,6 +25,9 @@ const MovingBalls = () => {
             }
             ball!.style.left = `${leftRand}%`;
             ball!.style.top = `${topRand}%` ;
+            
+            
+
             if (i % 2 == 1) { 
                 ball!.style.backgroundColor = "var(--sec-color)"
                 ball!.style.opacity = "0.6"
@@ -31,6 +35,7 @@ const MovingBalls = () => {
             }
             else
                 ball!.style.backgroundColor = "var(--fourth-color)"
+
             
         }
         
