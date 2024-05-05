@@ -1,4 +1,3 @@
-
 import ThemesChanger from "./components/ThemesChanger"
 import { WholePage } from "./components/WholePage"
 import PortfolioContext from "./context/PortfolioContext"

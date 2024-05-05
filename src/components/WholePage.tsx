@@ -10,6 +10,7 @@ import { AnimatePresence } from 'framer-motion';
 export const WholePage = () => {
   const { getThemeChangerState, getCurrTheme , menuOpen} = useCont();
   const loc = useLocation();
+  
   return (
     <div className={`relative ${getCurrTheme() == 8 ? "bg-rainbow" : "bg-main-background"} ${getCurrTheme() == 9 ? "cursor-lobster" : ""} z-20 w-full min-h-[100vh] overflow-x-hidden ${getThemeChangerState() == 1 ? "mt-44" : "mt-0"} trans `}>
       <Navbar />
