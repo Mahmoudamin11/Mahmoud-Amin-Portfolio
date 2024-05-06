@@ -47,6 +47,8 @@ export function PortfolioContext({children}:child) {
         }
     } ,[currTheme])
 
+    
+
     const openMenu = () => { 
         if (getThemeChangerState() == 1) { 
             setThemeChangerOpen(0);

@@ -7,7 +7,7 @@ function App() {
   
   return (
     <PortfolioContext>
-      <div className="w-full h-full">
+      <div className={`w-full h-full `}>
         {/* theme changer */}
         <ThemesChanger />
         <WholePage />

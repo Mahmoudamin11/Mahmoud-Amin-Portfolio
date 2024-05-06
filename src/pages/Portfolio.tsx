@@ -258,7 +258,9 @@ const Portfolio = () => {
         animate={{opacity:1, translateY: "0px"}}
         exit={{opacity:1, translateY: "0px"}}
     className="flex flex-col  width mx-auto">
-      <h1 className={`mt-16 ${getCurrTheme() == 9 ? "title-font-lobster" : "title-font"} text-center text-[110px] max-[500px]:text-[75px] font-bold text-rare-color`}>Portfolio</h1>
+      <h1 className={`relative mt-16 ${getCurrTheme() == 9 ? "title-font-lobster" : "title-font"} text-center text-[110px] max-[500px]:text-[75px] font-bold text-rare-color `}>
+        Portfolio
+      </h1>
       {/* large screens icons */}
       <div className="flex max-sm:hidden gap-10   mx-auto mt-12">
         <svg viewBox="0 0 128 128" className="w-10 trans animate-bounce">

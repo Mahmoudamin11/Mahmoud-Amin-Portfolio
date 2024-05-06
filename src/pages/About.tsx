@@ -17,10 +17,11 @@ const About = () => {
         animate={{opacity:1, translateY: "0px"}}
         exit={{opacity:1, translateY: "0px"}}
     className="overflow-y-hidden">
-      <h1 className={` ${getCurrTheme() == 9  ? "title-font-lobster" : "title-font"} text-[110px] max-[500px]:text-[75px] text-rare-color text-center mt-16 font-bold`}>
-        Hey <span className="max-[500px]:hidden font-bold">there.</span>
+      <h1 className={`relative ${getCurrTheme() == 9  ? "title-font-lobster" : "title-font"} text-[110px] max-[500px]:text-[75px] text-rare-color text-center mt-16 font-bold`}>
+        Hey <span className="max-[500px]:hidden font-bold relative">there.</span>
+        
       </h1>
-      <h1 className={` min-[500px]:hidden S${getCurrTheme() == 9  ? "title-font-lobster" : "title-font"} text-[110px] max-[500px]:text-[75px] text-rare-color text-center -mt-10 font-bold`}>
+      <h1 className={`relative min-[500px]:hidden S${getCurrTheme() == 9  ? "title-font-lobster" : "title-font"} text-[110px] max-[500px]:text-[75px] text-rare-color text-center -mt-10 font-bold`}>
         there.
       </h1>
       {/* grid grid-cols-[40%_55%] */}

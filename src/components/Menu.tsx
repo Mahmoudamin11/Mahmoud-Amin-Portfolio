@@ -15,7 +15,7 @@ const Menu = () => {
             setrotate(false);
     }, [])
   return (
-    <div className={`flex transition-bgColor trans  flex-col justify-center gap-10 w-full h-full fixed top-0 left-0 z-50 py-20 px-28 max-[500px]:px-20 bg-black`}>
+    <div className={`flex  transition-bgColor trans  flex-col justify-center gap-10 w-full h-full fixed top-0 left-0 z-50 py-20 px-28 max-[500px]:px-20 bg-black`}>
         <Link onClick={() => openMenu()} to="/" className={`linkMenu   py-4  ${getOpenedPage() == "home" ? "active" : ""}  flex items-center ${getCurrTheme() == 9 ? "cursor-lobsterHover" : "cursor-pointer"}  gap-2 items-center`}>
             <span className='font-light text-rare-color'>01</span>
             <span className='uppercase text-main-text-color font-bold max-[500px]:text-3xl text-4xl text-text-color'>home</span>

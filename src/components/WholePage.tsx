@@ -12,7 +12,7 @@ export const WholePage = () => {
   const loc = useLocation();
   
   return (
-    <div className={`relative ${getCurrTheme() == 8 ? "bg-rainbow" : "bg-main-background"} ${getCurrTheme() == 9 ? "cursor-lobster" : ""} z-20 w-full min-h-[100vh] overflow-x-hidden ${getThemeChangerState() == 1 ? "mt-44" : "mt-0"} trans `}>
+    <div className={`relative ${menuOpen ? "max-h-[100vh] overflow-hidden" : ""}  ${getCurrTheme() == 8 ? "bg-rainbow" : "bg-main-background"} ${getCurrTheme() == 9 ? "cursor-lobster" : ""} z-20 w-full min-h-[100vh] overflow-x-hidden ${getThemeChangerState() == 1 ? "mt-44" : "mt-0"} trans `}>
       <Navbar />
       
       <AnimatePresence>
