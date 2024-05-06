@@ -41,7 +41,7 @@ const LatestProjects = () => {
                     <div  key={p.id} className="flex trans flex-col items-center justify-center gap-5   ">
                         
                         <Link to='/portfolio' onClick={() => goToProject(p.id)} onMouseEnter={() => scrollProject(p.id, true)} onMouseLeave={() => scrollProject(p.id, false)}   
-                            className={` font-bold text-2xl titleLinks  ${index == 0 ?  "after:bg-[#8FB77C]" : index == 1 ? "after:bg-[#F46C38]" : index == 2 ? "after:bg-[#D3A863]" : index == 3 ? "after:bg-[#005CE5]"  :  "after:bg-sec-color"} after:trans before:trans  text-rare-color trans  ${getCurrTheme() == 9 ? "cursor-lobsterHover" : "cursor-pointer"}  `}>
+                            className={` font-bold text-2xl titleLinks  ${index == 0 ?  "after:bg-[#8FB77C]" : index == 2 ? "after:bg-[#F46C38]" : index == 1 ? "after:bg-[#D3A863]" : index == 3 ? "after:bg-[#005CE5]"  :  "after:bg-sec-color"} after:trans before:trans  text-rare-color trans  ${getCurrTheme() == 9 ? "cursor-lobsterHover" : "cursor-pointer"}  `}>
                             {p.title}
                         </Link>
                         <div  className="group bg-fourth-color  relative w-64 h-80 overflow-hidden   ">

@@ -126,10 +126,10 @@ const Portfolio = () => {
 
   const projectsData = [
     {id:1, title:"Livin Furniture Store", txt:"Livin Furniture is a website for selling a lot of furniture types online.", imgs:[liv1, liv2, liv3, liv4], date : "7 / 4 / 2024", link:"https://66124ca49678090008f41605--bright-muffin-273ec2.netlify.app/", colorCode: "#8FB77C"},
-    {id:5, title:"Countries Reset API", txt:"A website to get all the possible details about any country in the whole world.", imgs:[country1, country2, country3, country4], date : "8 / 3 / 2024", link:"https://65eb263c8b95dca4c8dec45e--countries-searcher-api.netlify.app/", colorCode: "#2B3945"},
+    {id:2, title:"Countries Reset API", txt:"A website to get all the possible details about any country in the whole world.", imgs:[country1, country2, country3, country4], date : "8 / 3 / 2024", link:"https://65eb263c8b95dca4c8dec45e--countries-searcher-api.netlify.app/", colorCode: "#2B3945"},
     {id:3, title:"Mellifera Honey", txt:"A responsive landing page showing why Mellifera honey company is the best in the market.", imgs:[honey1, honey2, honey3, honey4], date : "20 / 1 / 2023 ", link:"https://mahmoudamin11.github.io/Mellifera/", colorCode: "#D3A863"},
-    {id:2, title:"FitFlex GYM", txt:"A responsive landing page for  the features provided by the worldwide FitFlex GYM.", imgs:[fitflex1, fitflex2, fitflex3, fitflex4], date : "7 / 1 / 2024", link:"https://mahmoudamin11.github.io/FitFlex-GYM/", colorCode: "#F46C38"},
-    {id:4, title:"Ride it Showroom", txt:"An online showroom website to explore the big world of cars easily.", imgs:[carSelling1, carSelling2, carSelling3, carSelling4], date : "23 / 12 / 2023", link:"https://mahmoudamin11.github.io/Car_Selling/", colorCode: "#005CE5"},
+    {id:4, title:"FitFlex GYM", txt:"A responsive landing page for  the features provided by the worldwide FitFlex GYM.", imgs:[fitflex1, fitflex2, fitflex3, fitflex4], date : "7 / 1 / 2024", link:"https://mahmoudamin11.github.io/FitFlex-GYM/", colorCode: "#F46C38"},
+    {id:5, title:"Ride it Showroom", txt:"An online showroom website to explore the big world of cars easily.", imgs:[carSelling1, carSelling2, carSelling3, carSelling4], date : "23 / 12 / 2023", link:"https://mahmoudamin11.github.io/Car_Selling/", colorCode: "#005CE5"},
     {id:6, title:"Advanced XO Game", txt:"Advanced XO game, with unbeatable computer and 2 players feature.", imgs:[xo1, xo2, xo3, xo4], date : "20 / 10 / 2023", link:"https://mahmoudamin11.github.io/Advanced-XO-Game/", colorCode: "#2C343F"},
   ];
 
