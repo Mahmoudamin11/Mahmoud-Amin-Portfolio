@@ -58,7 +58,10 @@ const Portfolio = () => {
   useEffect(() => { 
     for(let i = 0  ; i < 6;  i++) { 
       let link = document.getElementById(`previewSite${i + 1}`);
-        link!.style.backgroundColor =`${projectsData[i].colorCode}` ;
+      
+      link!.style.backgroundColor =`${projectsData[i].colorCode}` ;
+      
+      
     }
   }, [])
 
@@ -174,8 +177,8 @@ const Portfolio = () => {
                 alt={`${project.title}`} className={`${imgPtrs[project.id - 1] == 2 ? "translate-x-0 top-0 left-0" :imgPtrs[project.id - 1] > 2 ? "translate-x-[120%] top-0 left-0" : "-translate-x-[120%] top-0 left-0"} trans absolute top-0 left-0 max-[700px]:h-[250px] max-[500px]:h-[200px] h-[300px] w-full `} />
                 <img src={project.imgs[3]} 
                 alt={`${project.title}`} className={`${imgPtrs[project.id - 1] == 3 ? "translate-x-0 top-0 left-0" :imgPtrs[project.id - 1] > 3 ? "translate-x-[120%] top-0 left-0" : "-translate-x-[120%] top-0 left-0"} trans absolute top-0 left-0 max-[700px]:h-[250px] max-[500px]:h-[200px] h-[300px] w-full `} />
-                { <button id={`rightBtn${project.id}`} onClick={() => moveImg(project.id, +1)} className={`${imgPtrs[project.id - 1] == 3 ? "opacity-0 pointer-events-none" : "opacity-100"} absolute opacity-0  trans right-3 max-sm:right-2  z-20 text-white top-1/2 -translate-y-1/2 w-8 h-8 max-sm:w-6 max-sm:h-6 flex items-center justify-center rounded-md bg-third-color `}><FontAwesomeIcon icon={faAngleRight}  className="max-sm:text-" /></button>}
-                { <button id={`leftBtn${project.id}`} onClick={() => moveImg(project.id, -1)} className={` ${imgPtrs[project.id - 1] == 0 ? "opacity-0 pointer-events-none" : "opacity-100 pointer-events-auto"} absolute opacity-0  trans left-3 max-sm:left-2  z-20 text-white top-1/2 -translate-y-1/2 w-8 h-8 max-sm:w-6 max-sm:h-6 flex items-center justify-center rounded-md  rotate-180 bg-third-color `}><FontAwesomeIcon icon={faAngleRight}  className="max-sm:text-" /></button>}
+                { <button id={`rightBtn${project.id}`} onClick={() => moveImg(project.id, +1)} className={`${imgPtrs[project.id - 1] == 3 ? "opacity-0 pointer-events-none" : "opacity-100"} ${getCurrTheme() == 9 ? "hover:cursor-lobsterHover cursor-lobster" : "cursor-pointer"} absolute opacity-0  trans right-3 max-sm:right-2  z-20 text-white top-1/2 -translate-y-1/2 w-8 h-8 max-sm:w-6 max-sm:h-6 flex items-center justify-center rounded-md bg-third-color `}><FontAwesomeIcon icon={faAngleRight}  className="max-sm:text-" /></button>}
+                { <button id={`leftBtn${project.id}`} onClick={() => moveImg(project.id, -1)} className={` ${imgPtrs[project.id - 1] == 0 ? "opacity-0 pointer-events-none" : "opacity-100 pointer-events-auto"} ${getCurrTheme() == 9 ? "hover:cursor-lobsterHover cursor-lobster" : "cursor-pointer"} absolute opacity-0  trans left-3 max-sm:left-2  z-20 text-white top-1/2 -translate-y-1/2 w-8 h-8 max-sm:w-6 max-sm:h-6 flex items-center justify-center rounded-md  rotate-180 bg-third-color `}><FontAwesomeIcon icon={faAngleRight}  className="max-sm:text-" /></button>}
               </div>
               
               {/* info */}
