@@ -33,12 +33,7 @@ const Portfolio = () => {
 
   const loc = useLocation();
   const {getCurrTheme} = useCont();
-  const [livin, setlivin] = useState(1);
-  const [carSelling, setcarSelling] = useState(1);
-  const [fitGym, setfitGym] = useState(1);
-  const [honey, sethoney] = useState(1);
-  const [country, setcountry] = useState(1);
-  const [xo, setxo] = useState(1);
+  const [imgPtrs, setimgPtrs] = useState([0,0,0,0,0,0]);
   
   const {getThemeChangerState, toggleThemeChangerState} = useCont();
   
@@ -48,209 +43,50 @@ const Portfolio = () => {
     }
   }, [loc.pathname])
 
-  const changeBtnColor = (index:number , value:number) => { 
-    // console.log("states" , ourStates);
-    let rightBtn = document.getElementById(`rightBtn${index}`);
-    let leftBtn = document.getElementById(`leftBtn${index}`);
-    if (index != -1 && value != -1) { 
-      if (value == 4) { 
-        rightBtn!.classList.remove("opacity-100");
-        rightBtn!.classList.remove("opacity-100");
-        rightBtn!.style.pointerEvents = "none";
-        leftBtn!.classList.add("opacity-100");
-        leftBtn!.classList.add("opacity-100");
-        if (getCurrTheme() == 9 ) { 
-          leftBtn!.classList.add("cursor-lobsterHover");
-        }
-        else { 
-          leftBtn!.classList.add("cursor-pointer");
-        }
-        leftBtn!.style.pointerEvents = "auto";
-      }
-      else if (value  == 1) { 
-        leftBtn!.classList.remove("opacity-100");
-        leftBtn!.classList.remove("opacity-100");
-        leftBtn!.style.pointerEvents = "none";
   
-        rightBtn!.classList.add("opacity-100");
-        rightBtn!.classList.add("opacity-100");
-
-        if (getCurrTheme() == 9 ) { 
-          rightBtn!.classList.add("cursor-lobsterHover");
-        }
-        else { 
-          rightBtn!.classList.add("cursor-pointer");
-        }
-        rightBtn!.style.pointerEvents = "auto";
-      }
-      else { 
-        rightBtn!.classList.add("opacity-100");
-        rightBtn!.classList.add("opacity-100");
-        rightBtn!.style.pointerEvents = "auto";
-        leftBtn!.classList.add("opacity-100");
-        leftBtn!.classList.add("opacity-100");
-        leftBtn!.style.pointerEvents = "auto";
-        if (getCurrTheme() == 9 ) { 
-          leftBtn!.classList.add("cursor-lobsterHover");
-          rightBtn!.classList.add("cursor-lobsterHover");
-        }
-        else { 
-          leftBtn!.classList.add("cursor-pointer");
-          rightBtn!.classList.add("cursor-pointer");
-        }
-      }
-    }
-    
-  }
-
-  const changeBtnColorStart = ( ) => { 
-    for(let i  = 0 ; i < 6 ; i++) { 
-      let rightBtn = document.getElementById(`rightBtn${i + 1}`);
-      let leftBtn = document.getElementById(`leftBtn${i  + 1}`);
-      
-        leftBtn!.classList.remove("opacity-100");
-        leftBtn!.classList.remove("opacity-100");
-        leftBtn!.style.pointerEvents = "none";
-  
-        rightBtn!.classList.add("opacity-100");
-        rightBtn!.classList.add("opacity-100");
-        rightBtn!.style.pointerEvents = "auto"; 
-        if (getCurrTheme() == 9 ) { 
-          rightBtn!.classList.add("cursor-lobsterHover");
-        }
-        else { 
-          rightBtn!.classList.add("cursor-pointer");
-        }
-    }
-  }
 
   const projectsData = [
-    {id:1, title:"Livin Furniture Store", txt:"Livin Furniture is a website for selling a lot of furniture types online.", imgs:[liv1, liv2, liv3, liv4], date : "7 / 4 / 2024", link:"https://66124ca49678090008f41605--bright-muffin-273ec2.netlify.app/", colorCode: "#8FB77C"},
-    {id:2, title:"Countries Reset API", txt:"A website to get all the possible details about any country in the whole world.", imgs:[country1, country2, country3, country4], date : "8 / 3 / 2024", link:"https://65eb263c8b95dca4c8dec45e--countries-searcher-api.netlify.app/", colorCode: "#2B3945"},
-    {id:3, title:"Mellifera Honey", txt:"A responsive landing page showing why Mellifera honey company is the best in the market.", imgs:[honey1, honey2, honey3, honey4], date : "20 / 1 / 2023 ", link:"https://mahmoudamin11.github.io/Mellifera/", colorCode: "#D3A863"},
-    {id:4, title:"FitFlex GYM", txt:"A responsive landing page for  the features provided by the worldwide FitFlex GYM.", imgs:[fitflex1, fitflex2, fitflex3, fitflex4], date : "7 / 1 / 2024", link:"https://mahmoudamin11.github.io/FitFlex-GYM/", colorCode: "#F46C38"},
-    {id:5, title:"Ride it Showroom", txt:"An online showroom website to explore the big world of cars easily.", imgs:[carSelling1, carSelling2, carSelling3, carSelling4], date : "23 / 12 / 2023", link:"https://mahmoudamin11.github.io/Car_Selling/", colorCode: "#005CE5"},
-    {id:6, title:"Advanced XO Game", txt:"Advanced XO game, with unbeatable computer and 2 players feature.", imgs:[xo1, xo2, xo3, xo4], date : "20 / 10 / 2023", link:"https://mahmoudamin11.github.io/Advanced-XO-Game/", colorCode: "#2C343F"},
+    {id:1, title:"Livin Furniture Store", txt:"Livin Furniture is a website for selling a lot of furniture types online.", imgs:[liv1, liv2, liv3, liv4], imgPtr:0 , date : "7 / 4 / 2024", link:"https://66124ca49678090008f41605--bright-muffin-273ec2.netlify.app/", colorCode: "#8FB77C"},
+    {id:2, title:"Countries Reset API", txt:"A website to get all the possible details about any country in the whole world.", imgs:[country1, country2, country3, country4], imgPtr:0 , date : "8 / 3 / 2024", link:"https://countries-rest-api-d1u2.vercel.app/", colorCode: "#2B3945"},
+    {id:3, title:"Mellifera Honey", txt:"A responsive landing page showing why Mellifera honey company is the best in the market.", imgs:[honey1, honey2, honey3, honey4], imgPtr:0 , date : "20 / 1 / 2023 ", link:"https://mahmoudamin11.github.io/Mellifera/", colorCode: "#D3A863"},
+    {id:4, title:"FitFlex GYM", txt:"A responsive landing page for  the features provided by the worldwide FitFlex GYM.", imgs:[fitflex1, fitflex2, fitflex3, fitflex4], imgPtr:0 , date : "7 / 1 / 2024", link:"https://mahmoudamin11.github.io/FitFlex-GYM/", colorCode: "#F46C38"},
+    {id:5, title:"Ride it Showroom", txt:"An online showroom website to explore the big world of cars easily.", imgs:[carSelling1, carSelling2, carSelling3, carSelling4], imgPtr:0 , date : "23 / 12 / 2023", link:"https://mahmoudamin11.github.io/Car_Selling/", colorCode: "#005CE5"},
+    {id:6, title:"Advanced XO Game", txt:"Advanced XO game, with unbeatable computer and 2 players feature.", imgs:[xo1, xo2, xo3, xo4], imgPtr:0 , date : "20 / 10 / 2023", link:"https://mahmoudamin11.github.io/Advanced-XO-Game/", colorCode: "#2C343F"},
   ];
+
 
   useEffect(() => { 
     for(let i = 0  ; i < 6;  i++) { 
       let link = document.getElementById(`previewSite${i + 1}`);
-      
-      link!.style.border = " 1px solid"; 
-      
-      link!.addEventListener('mouseover', ()=> { 
-        link!.style.color = "white";
-        link!.style.borderColor  = `${projectsData[i].colorCode}`;
         link!.style.backgroundColor =`${projectsData[i].colorCode}` ;
-      })
-      link!.addEventListener('mouseout', ()=> { 
-        link!.style.color = "var(--sec-color)";
-        link!.style.borderColor  = `var(--sec-color)`;
-        link!.style.backgroundColor =`transparent` ;
-      })
-      
     }
-    changeBtnColorStart();
   }, [])
 
-  const changeBtnWithChangeTheme  = () => { 
-    for(let i  = 0 ; i < 6 ; i++) { 
-      let rightBtn = document.getElementById(`rightBtn${i + 1}`);
-      let leftBtn = document.getElementById(`leftBtn${i  + 1}`);
-      
-      if (getCurrTheme() == 9 ) { 
-        rightBtn!.classList.remove("cursor-pointer");
-        leftBtn!.classList.remove("cursor-pointer");
-        rightBtn!.classList.add("cursor-lobsterHover");
-        leftBtn!.classList.add("cursor-lobsterHover");
-      }
-      else { 
-        rightBtn!.classList.remove("cursor-lobsterHover");
-        leftBtn!.classList.remove("cursor-lobsterHover");
-        rightBtn!.classList.add("cursor-pointer");
-        leftBtn!.classList.add("cursor-pointer");
-      }
-    }
-  }
   
-  useEffect(() => { 
-    changeBtnWithChangeTheme();
-  }, [getCurrTheme()])
   
-  const nextImg = (id:number) => { 
-    let val = -1 ; 
-    switch(id) { 
-      case 1 :
-        if (livin < 4)
-          val = livin + 1 ;
-          setlivin(livin+1);
-      break;
-      case 2 :
-        if (carSelling < 4)
-          val = carSelling + 1 ;
-          setcarSelling(carSelling+1);
-      break;
-      case 3 :
-        if (fitGym < 4)
-          val = fitGym + 1 ;
-          setfitGym(fitGym+1);
-      break;
-      case 4 :
-        if (honey < 4)
-          val = honey + 1 ;
-          sethoney(honey+1);
-      break;
-      case 5 :
-        if (country < 4)
-          val = country + 1 ;
-          setcountry(country+1);
-      break;
-      case 6 :
-        if (xo < 4)
-          val = xo + 1 ;
-          setxo(xo+1);
-      break;
-    }
-    changeBtnColor(id, val);
-  }
 
-  const previousImg = (id:number) => { 
-    let val = -1 ; 
-    switch(id) { 
-      case 1 :
-        if (livin > 1)
-          val = livin - 1 ;
-          setlivin(livin-1);
-      break;
-      case 2 :
-        if (carSelling > 1)
-          val = carSelling - 1 ;
-          setcarSelling(carSelling-1);
-      break;
-      case 3 :
-        if (fitGym > 1)
-          val = fitGym -  1 ;
-          setfitGym(fitGym-1);
-      break;
-      case 4 :
-        if (honey > 1)
-          val = honey -  1 ;
-          sethoney(honey-1);
-      break;
-      case 5 :
-        if (country > 1)
-          val = country - 1 ;
-          setcountry(country-1);
-      break;
-      case 6 :
-        if (xo > 1)
-          val = xo - 1 ;
-          setxo(xo-1);
-      break;
+  const moveImg = (id:number , inc:number) => { 
+
+    // next 
+    let temp = new Array();
+    imgPtrs.map((i) => { 
+      temp.push(i);
+    })
+
+    if (inc > 0) { 
+      if (temp[id - 1] < 3)
+        temp[id - 1]++;
     }
-    changeBtnColor(id , val);
+    
+    // prev 
+    else { 
+      if (temp[id - 1] > 0)
+        temp[id - 1]--;
+    }
+
+    setimgPtrs(temp);
   }
+  
   
   return (
     <motion.div 
@@ -329,11 +165,17 @@ const Portfolio = () => {
             <div id={`projectDiv${project.id}`} key={`projectDiv${project.id}`} className={`flex  max-[1288px]:flex-col max-[1288px]:items-center max-[1288px]:gap-8 gap-20   trans space-up `}>
               
               {/* imgs carousal */}
-              <div className="relative group flex flex-col overflow-hidden w-[600px] max-[700px]:w-full">
-                <img src={project.id == 1 ? project.imgs[livin - 1] : project.id == 2 ? project.imgs[carSelling - 1]: project.id == 3 ? project.imgs[fitGym - 1]  : project.id == 4 ? project.imgs[honey - 1]:project.id == 5 ? project.imgs[country - 1] : project.imgs[xo - 1]} 
-                alt="" className="max-[700px]:h-[250px] max-[500px]:h-[200px] h-[300px] w-full " />
-                { <button id={`rightBtn${project.id}`} onClick={() => {nextImg(project.id )}} className={` absolute opacity-0  trans right-3 max-sm:right-2  z-20 text-white top-1/2 -translate-y-1/2 w-8 h-8 max-sm:w-6 max-sm:h-6 flex items-center justify-center rounded-md bg-third-color `}><FontAwesomeIcon icon={faAngleRight}  className="max-sm:text-" /></button>}
-                { <button id={`leftBtn${project.id}`} onClick={() => {previousImg(project.id )}} className={` absolute opacity-0  trans left-3 max-sm:left-2  z-20 text-white top-1/2 -translate-y-1/2 w-8 h-8 max-sm:w-6 max-sm:h-6 flex items-center justify-center rounded-md  rotate-180 bg-third-color `}><FontAwesomeIcon icon={faAngleRight}  className="max-sm:text-" /></button>}
+              <div className="relative overflow-hidden max-[700px]:h-[250px] max-[500px]:h-[200px] h-[300px] group flex flex-col  w-[600px] max-[700px]:w-full">
+                <img src={project.imgs[0]} 
+                alt={`${project.title}`} className={`${imgPtrs[project.id - 1] == 0 ? "translate-x-0 top-0 left-0" :imgPtrs[project.id - 1] > 0 ? "translate-x-[120%] top-0 left-0" : "-translate-x-[120%] top-0 left-0"} trans absolute top-0 left-0 max-[700px]:h-[250px] max-[500px]:h-[200px] h-[300px] w-full `} />
+                <img src={project.imgs[1]} 
+                alt={`${project.title}`} className={`${imgPtrs[project.id - 1] == 1 ? "translate-x-0 top-0 left-0" :imgPtrs[project.id - 1] > 1 ? "translate-x-[120%] top-0 left-0" : "-translate-x-[120%] top-0 left-0"} trans absolute top-0 left-0 max-[700px]:h-[250px] max-[500px]:h-[200px] h-[300px] w-full `} />
+                <img src={project.imgs[2]} 
+                alt={`${project.title}`} className={`${imgPtrs[project.id - 1] == 2 ? "translate-x-0 top-0 left-0" :imgPtrs[project.id - 1] > 2 ? "translate-x-[120%] top-0 left-0" : "-translate-x-[120%] top-0 left-0"} trans absolute top-0 left-0 max-[700px]:h-[250px] max-[500px]:h-[200px] h-[300px] w-full `} />
+                <img src={project.imgs[3]} 
+                alt={`${project.title}`} className={`${imgPtrs[project.id - 1] == 3 ? "translate-x-0 top-0 left-0" :imgPtrs[project.id - 1] > 3 ? "translate-x-[120%] top-0 left-0" : "-translate-x-[120%] top-0 left-0"} trans absolute top-0 left-0 max-[700px]:h-[250px] max-[500px]:h-[200px] h-[300px] w-full `} />
+                { <button id={`rightBtn${project.id}`} onClick={() => moveImg(project.id, +1)} className={`${imgPtrs[project.id - 1] == 3 ? "opacity-0 pointer-events-none" : "opacity-100"} absolute opacity-0  trans right-3 max-sm:right-2  z-20 text-white top-1/2 -translate-y-1/2 w-8 h-8 max-sm:w-6 max-sm:h-6 flex items-center justify-center rounded-md bg-third-color `}><FontAwesomeIcon icon={faAngleRight}  className="max-sm:text-" /></button>}
+                { <button id={`leftBtn${project.id}`} onClick={() => moveImg(project.id, -1)} className={` ${imgPtrs[project.id - 1] == 0 ? "opacity-0 pointer-events-none" : "opacity-100 pointer-events-auto"} absolute opacity-0  trans left-3 max-sm:left-2  z-20 text-white top-1/2 -translate-y-1/2 w-8 h-8 max-sm:w-6 max-sm:h-6 flex items-center justify-center rounded-md  rotate-180 bg-third-color `}><FontAwesomeIcon icon={faAngleRight}  className="max-sm:text-" /></button>}
               </div>
               
               {/* info */}
@@ -341,7 +183,7 @@ const Portfolio = () => {
                 <h1 className="text-4xl max-[485px]:text-3xl font-bold text-rare-color">{project.title}</h1>
                 <p className="max-[1288px]:text-center text-text-color text-lg font-light">{project.txt}</p>
                 <div className="flex w-full justify-between items-center">
-                  <a id={`previewSite${project.id}`} href={project.link} target="_blank" className={`${getCurrTheme() == 9 ? "hover:cursor-lobsterHover cursor-lobster" : "hover:cursor-pointer"} max-[700px]:text-sm max-[700px]:px-3 max-[700px]:py-2 font-bold text-sec-color border-sec-color  px-5 py-3 rounded-md trans  `}>Preview Website</a>
+                  <a id={`previewSite${project.id}`} href={project.link} target="_blank" className={`${getCurrTheme() == 9 ? "hover:cursor-lobsterHover cursor-lobster" : "hover:cursor-pointer"} trans hover:opacity-80 max-[700px]:text-sm max-[700px]:px-3 max-[700px]:py-2 font-bold text-white  px-5 py-3 rounded-md trans  `}>Preview Website</a>
                   <span  className=" font-light text-third-color text-lg">{project.date}</span>
                 </div>
               </div>

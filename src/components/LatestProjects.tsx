@@ -11,8 +11,8 @@ const LatestProjects = () => {
     const projects = [
         {img:livin , title:"Livin Furniture Store", id:1},
         {img:honey , title:"Mellifera Honey", id:3},
-        {img:fitFlex , title:"FitFlex Muscle GYM", id:2},
-        {img:cars , title:"Ride it showroom", id:4},
+        {img:fitFlex , title:"FitFlex Muscle GYM", id:4},
+        {img:cars , title:"Ride it showroom", id:5},
         // {img:xo , title:"Advanced XO Game", id:"5"},
     ]
     
