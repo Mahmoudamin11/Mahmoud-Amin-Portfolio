@@ -42,9 +42,9 @@ export default {
           },
 
           '25%' : {
-            '-webkit-transform': 'scale(1.1)',
-            '-ms-transform': 'scale(1.1)',
-            'transform': 'scale(1.1)',
+            '-webkit-transform': 'scale(1.2)',
+            '-ms-transform': 'scale(1.2)',
+            'transform': 'scale(1.2)',
           },
 
           '60%' : {
