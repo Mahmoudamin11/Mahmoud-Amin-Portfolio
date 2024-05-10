@@ -51,7 +51,7 @@ const LatestProjects = () => {
                 ))
             }
         </div>
-        <Link to="/portfolio" className={`group  mt-8 ml-auto flex gap-3 items-center ${getCurrTheme() == 9 ? "cursor-lobsterHover" : "cursor-pointer"} text-xl max-[500px]:text-[16px] text-sec-color font-bold`}>
+        <Link to="/portfolio" onClick={() => {scrollTo(0,0)}} className={`group  mt-8 ml-auto flex gap-3 items-center ${getCurrTheme() == 9 ? "cursor-lobsterHover" : "cursor-pointer"} text-xl max-[500px]:text-[16px] text-sec-color font-bold`}>
             <p>See All Projects</p>
             <FontAwesomeIcon icon={faArrowRight} className=" text-2xl max-[500px]:text-lg mt-[4px] trans group-hover:translate-x-2" />
         </Link>

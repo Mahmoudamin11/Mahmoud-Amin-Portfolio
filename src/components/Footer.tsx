@@ -11,8 +11,8 @@ const Footer = () => {
     const {getCurrTheme} = useCont();
 
   return (
-    <div className=" border-t-[1px] border-fourth-color space-up p-8 max-[500px]:px-2 w-full">
-        <div className=" width text-white flex justify-between items-center">
+    <div className=" border-t-[1px] border-fourth-color space-up p-8 max-[550px]:py-5 max-[550px]:px-2 w-full">
+        <div className=" width text-white flex max-[520px]:flex-col max-[550px]:gap-5 justify-between items-center">
             <p className=" text-text-color">&copy;{year}</p>
             <p className=" text-text-color max-sm:text-sm trans font-bold">Mahmoud Mohamed Amin</p>
             <div className="flex gap-4">
