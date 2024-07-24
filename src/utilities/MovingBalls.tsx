@@ -1,9 +1,11 @@
-import  {  useEffect } from 'react'
+import  {  memo, useEffect } from 'react'
 import { useCont } from '../context/PortfolioContext';
 
-const MovingBalls = () => {
+const MovingBalls = memo(() => {
     const {getCurrTheme} = useCont();
-    let arr= [];
+    let arr : Number[] = [];
+    
+    
     for(let i = 1; i <= 45; i++) { 
         arr.push(i);
     }
@@ -51,6 +53,6 @@ const MovingBalls = () => {
         }
     </div>
   )
-}
+})
 
 export default MovingBalls

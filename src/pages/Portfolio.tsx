@@ -1,4 +1,8 @@
 import { useCont } from "../context/PortfolioContext"
+import linked1 from "../assets/portfolio/linkedIn/link1.png"
+import linked2 from "../assets/portfolio/linkedIn/link2.png"
+import linked3 from "../assets/portfolio/linkedIn/link3.png"
+import linked4 from "../assets/portfolio/linkedIn/link4.png"
 import liv1 from "../assets/portfolio/livin_furniture/liv1.png"
 import liv2 from "../assets/portfolio/livin_furniture/liv2.png"
 import liv3 from "../assets/portfolio/livin_furniture/liv3.png"
@@ -24,16 +28,17 @@ import xo2 from '../assets/portfolio/xo_game/xo2.png'
 import xo3 from '../assets/portfolio/xo_game/xo3.png'
 import xo4 from '../assets/portfolio/xo_game/xo4.png'
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
-import { useEffect, useState } from "react"
+import { memo, useEffect, useState } from "react"
 import { useLocation } from "react-router-dom"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { motion } from "framer-motion"
-const Portfolio = () => {
+import { AsyncImage } from 'loadable-image';
+const Portfolio = memo(() => {
 
   const loc = useLocation();
   const {getCurrTheme} = useCont();
-  const [imgPtrs, setimgPtrs] = useState([0,0,0,0,0,0]);
+  const [imgPtrs, setimgPtrs] = useState([0,0,0,0,0,0,0]);
   
   const {getThemeChangerState, toggleThemeChangerState} = useCont();
   
@@ -46,17 +51,18 @@ const Portfolio = () => {
   
 
   const projectsData = [
-    {id:1, title:"Livin Furniture Store", txt:"Livin Furniture is a website for selling a lot of furniture types online.", imgs:[liv1, liv2, liv3, liv4], imgPtr:0 , date : "7 / 4 / 2024", link:"https://66124ca49678090008f41605--bright-muffin-273ec2.netlify.app/", colorCode: "#8FB77C"},
-    {id:2, title:"Countries Reset API", txt:"A website to get all the possible details about any country in the whole world.", imgs:[country1, country2, country3, country4], imgPtr:0 , date : "8 / 3 / 2024", link:"https://countries-rest-api-d1u2.vercel.app/", colorCode: "#2B3945"},
-    {id:3, title:"Mellifera Honey", txt:"A responsive landing page showing why Mellifera honey company is the best in the market.", imgs:[honey1, honey2, honey3, honey4], imgPtr:0 , date : "20 / 1 / 2023 ", link:"https://mahmoudamin11.github.io/Mellifera/", colorCode: "#D3A863"},
-    {id:4, title:"FitFlex GYM", txt:"A responsive landing page for  the features provided by the worldwide FitFlex GYM.", imgs:[fitflex1, fitflex2, fitflex3, fitflex4], imgPtr:0 , date : "7 / 1 / 2024", link:"https://mahmoudamin11.github.io/FitFlex-GYM/", colorCode: "#F46C38"},
-    {id:5, title:"Ride it Showroom", txt:"An online showroom website to explore the big world of cars easily.", imgs:[carSelling1, carSelling2, carSelling3, carSelling4], imgPtr:0 , date : "23 / 12 / 2023", link:"https://mahmoudamin11.github.io/Car_Selling/", colorCode: "#005CE5"},
-    {id:6, title:"Advanced XO Game", txt:"Advanced XO game, with unbeatable computer and 2 players feature.", imgs:[xo1, xo2, xo3, xo4], imgPtr:0 , date : "20 / 10 / 2023", link:"https://mahmoudamin11.github.io/Advanced-XO-Game/", colorCode: "#2C343F"},
+    {id:1, title:"LikedIn Clone", txt:"Full-stack LinkedIn clone, using Firebase for the database, authentication, signing in with Google & Using Redux for storing the posts of the user.", imgs:[linked1, linked2, linked3, linked4], imgPtr:0 , date : "15 / 7 / 2024", link:"https://linkedin-clone-1fcc0.web.app/", colorCode: "#0077b5"},
+    {id:2, title:"Livin Furniture Store", txt:"Livin Furniture is a website for selling a lot of furniture types online.", imgs:[liv1, liv2, liv3, liv4], imgPtr:0 , date : "7 / 4 / 2024", link:"https://66124ca49678090008f41605--bright-muffin-273ec2.netlify.app/", colorCode: "#8FB77C"},
+    {id:3, title:"Countries Reset API", txt:"A website to get all the possible details about any country in the whole world.", imgs:[country1, country2, country3, country4], imgPtr:0 , date : "8 / 3 / 2024", link:"https://countries-rest-api-d1u2.vercel.app/", colorCode: "#2B3945"},
+    {id:4, title:"Mellifera Honey", txt:"A responsive landing page showing why Mellifera honey company is the best in the market.", imgs:[honey1, honey2, honey3, honey4], imgPtr:0 , date : "20 / 1 / 2023 ", link:"https://mahmoudamin11.github.io/Mellifera/", colorCode: "#D3A863"},
+    {id:5, title:"FitFlex GYM", txt:"A responsive landing page for  the features provided by the worldwide FitFlex GYM.", imgs:[fitflex1, fitflex2, fitflex3, fitflex4], imgPtr:0 , date : "7 / 1 / 2024", link:"https://mahmoudamin11.github.io/FitFlex-GYM/", colorCode: "#F46C38"},
+    {id:6, title:"Ride it Showroom", txt:"An online showroom website to explore the big world of cars easily.", imgs:[carSelling1, carSelling2, carSelling3, carSelling4], imgPtr:0 , date : "23 / 12 / 2023", link:"https://mahmoudamin11.github.io/Car_Selling/", colorCode: "#005CE5"},
+    {id:7, title:"Advanced XO Game", txt:"Advanced XO game, with unbeatable computer and 2 players feature.", imgs:[xo1, xo2, xo3, xo4], imgPtr:0 , date : "20 / 10 / 2023", link:"https://mahmoudamin11.github.io/Advanced-XO-Game/", colorCode: "#2C343F"},
   ];
 
 
   useEffect(() => { 
-    for(let i = 0  ; i < 6;  i++) { 
+    for(let i = 0  ; i < 7;  i++) { 
       let link = document.getElementById(`previewSite${i + 1}`);
       
       link!.style.backgroundColor =`${projectsData[i].colorCode}` ;
@@ -123,6 +129,7 @@ const Portfolio = () => {
         <svg viewBox="0 0 128 128" className="w-10 trans max-sm:hidden animate-bounce">
           <path fill="#0acf83" d="M45.5 129c11.9 0 21.5-9.6 21.5-21.5V86H45.5C33.6 86 24 95.6 24 107.5S33.6 129 45.5 129zm0 0"></path><path fill="#a259ff" d="M24 64.5C24 52.6 33.6 43 45.5 43H67v43H45.5C33.6 86 24 76.4 24 64.5zm0 0"></path><path fill="#f24e1e" d="M24 21.5C24 9.6 33.6 0 45.5 0H67v43H45.5C33.6 43 24 33.4 24 21.5zm0 0"></path><path fill="#ff7262" d="M67 0h21.5C100.4 0 110 9.6 110 21.5S100.4 43 88.5 43H67zm0 0"></path><path fill="#1abcfe" d="M110 64.5c0 11.9-9.6 21.5-21.5 21.5S67 76.4 67 64.5 76.6 43 88.5 43 110 52.6 110 64.5zm0 0"></path>
         </svg>
+        <img src="/src/assets/portfolio/redux-logo-svgrepo-com.svg" alt="" className="w-[40px] h-[40px] animate-bounce" />
         {/* add github as an icon  */}
         <FontAwesomeIcon icon={faGithub} className="text-[40px] max-sm:hidden text-text-color trans animate-bounce" />
         
@@ -152,6 +159,7 @@ const Portfolio = () => {
             <svg viewBox="0 0 128 128" className="w-10 trans animate-bounce">
               <path fill="#fff" d="M22.67 47h99.67v73.67H22.67z"></path><path data-name="original" fill="#007acc" d="M1.5 63.91v62.5h125v-125H1.5zm100.73-5a15.56 15.56 0 017.82 4.5 20.58 20.58 0 013 4c0 .16-5.4 3.81-8.69 5.85-.12.08-.6-.44-1.13-1.23a7.09 7.09 0 00-5.87-3.53c-3.79-.26-6.23 1.73-6.21 5a4.58 4.58 0 00.54 2.34c.83 1.73 2.38 2.76 7.24 4.86 8.95 3.85 12.78 6.39 15.16 10 2.66 4 3.25 10.46 1.45 15.24-2 5.2-6.9 8.73-13.83 9.9a38.32 38.32 0 01-9.52-.1 23 23 0 01-12.72-6.63c-1.15-1.27-3.39-4.58-3.25-4.82a9.34 9.34 0 011.15-.73L82 101l3.59-2.08.75 1.11a16.78 16.78 0 004.74 4.54c4 2.1 9.46 1.81 12.16-.62a5.43 5.43 0 00.69-6.92c-1-1.39-3-2.56-8.59-5-6.45-2.78-9.23-4.5-11.77-7.24a16.48 16.48 0 01-3.43-6.25 25 25 0 01-.22-8c1.33-6.23 6-10.58 12.82-11.87a31.66 31.66 0 019.49.26zm-29.34 5.24v5.12H56.66v46.23H45.15V69.26H28.88v-5a49.19 49.19 0 01.12-5.17C29.08 59 39 59 51 59h21.83z"></path>
             </svg>
+              <img src="/src/assets/portfolio/redux-logo-svgrepo-com.svg" alt="" className="w-[40px] h-[40px] animate-bounce" />
             <svg viewBox="0 0 128 128" className="w-10 trans animate-bounce">
               <path fill="#0acf83" d="M45.5 129c11.9 0 21.5-9.6 21.5-21.5V86H45.5C33.6 86 24 95.6 24 107.5S33.6 129 45.5 129zm0 0"></path><path fill="#a259ff" d="M24 64.5C24 52.6 33.6 43 45.5 43H67v43H45.5C33.6 86 24 76.4 24 64.5zm0 0"></path><path fill="#f24e1e" d="M24 21.5C24 9.6 33.6 0 45.5 0H67v43H45.5C33.6 43 24 33.4 24 21.5zm0 0"></path><path fill="#ff7262" d="M67 0h21.5C100.4 0 110 9.6 110 21.5S100.4 43 88.5 43H67zm0 0"></path><path fill="#1abcfe" d="M110 64.5c0 11.9-9.6 21.5-21.5 21.5S67 76.4 67 64.5 76.6 43 88.5 43 110 52.6 110 64.5zm0 0"></path>
             </svg>
@@ -169,14 +177,44 @@ const Portfolio = () => {
               
               {/* imgs carousal */}
               <div className="relative overflow-hidden max-[700px]:h-[250px] max-[500px]:h-[200px] h-[300px] group flex flex-col  w-[600px] max-[700px]:w-full">
-                <img src={project.imgs[0]} 
-                alt={`${project.title}`} className={`${imgPtrs[project.id - 1] == 0 ? "translate-x-0 top-0 left-0" :imgPtrs[project.id - 1] > 0 ? "translate-x-[120%] top-0 left-0" : "-translate-x-[120%] top-0 left-0"} trans absolute top-0 left-0 max-[700px]:h-[250px] max-[500px]:h-[200px] h-[300px] w-full `} />
-                <img src={project.imgs[1]} 
-                alt={`${project.title}`} className={`${imgPtrs[project.id - 1] == 1 ? "translate-x-0 top-0 left-0" :imgPtrs[project.id - 1] > 1 ? "translate-x-[120%] top-0 left-0" : "-translate-x-[120%] top-0 left-0"} trans absolute top-0 left-0 max-[700px]:h-[250px] max-[500px]:h-[200px] h-[300px] w-full `} />
-                <img src={project.imgs[2]} 
-                alt={`${project.title}`} className={`${imgPtrs[project.id - 1] == 2 ? "translate-x-0 top-0 left-0" :imgPtrs[project.id - 1] > 2 ? "translate-x-[120%] top-0 left-0" : "-translate-x-[120%] top-0 left-0"} trans absolute top-0 left-0 max-[700px]:h-[250px] max-[500px]:h-[200px] h-[300px] w-full `} />
-                <img src={project.imgs[3]} 
-                alt={`${project.title}`} className={`${imgPtrs[project.id - 1] == 3 ? "translate-x-0 top-0 left-0" :imgPtrs[project.id - 1] > 3 ? "translate-x-[120%] top-0 left-0" : "-translate-x-[120%] top-0 left-0"} trans absolute top-0 left-0 max-[700px]:h-[250px] max-[500px]:h-[200px] h-[300px] w-full `} />
+                
+                {/* <img loading="lazy" src={project.imgs[0]} 
+                alt={`${project.title}`}  /> */}
+
+                <div className={`${imgPtrs[project.id - 1] == 0 ? "translate-x-0 top-0 left-0" :imgPtrs[project.id - 1] > 0 ? "translate-x-[120%] top-0 left-0" : "-translate-x-[120%] top-0 left-0"} trans absolute top-0 left-0 max-[700px]:h-[250px] max-[500px]:h-[200px] h-[300px] w-full `}>
+                  <AsyncImage
+                    src={project.imgs[0]}
+                    style={{ width: "100%", height: "100%"}}
+                    loader={<div style={{ background: '#888' }} />}
+                  />
+                </div>
+                <div className={`${imgPtrs[project.id - 1] == 1 ? "translate-x-0 top-0 left-0" :imgPtrs[project.id - 1] > 1 ? "translate-x-[120%] top-0 left-0" : "-translate-x-[120%] top-0 left-0"} trans absolute top-0 left-0 max-[700px]:h-[250px] max-[500px]:h-[200px] h-[300px] w-full `}>
+                  <AsyncImage
+                    src={project.imgs[1]}
+                    style={{ width: "100%", height: "100%", objectFit : "contain"}}
+                    loader={<div style={{ background: '#888' }} />}
+                  />
+                </div>
+                {/* <img loading="lazy" src={project.imgs[1]} 
+                alt={`${project.title}`}  /> */}
+                <div className={`${imgPtrs[project.id - 1] == 2 ? "translate-x-0 top-0 left-0" :imgPtrs[project.id - 1] > 2 ? "translate-x-[120%] top-0 left-0" : "-translate-x-[120%] top-0 left-0"} trans absolute top-0 left-0 max-[700px]:h-[250px] max-[500px]:h-[200px] h-[300px] w-full `}>
+                  <AsyncImage
+                    src={project.imgs[2]}
+                    style={{ width: "100%", height: "100%", objectFit : "contain"}}
+                    loader={<div style={{ background: '#888' }} />}
+                  />
+                </div>
+                {/* <img loading="lazy" src={project.imgs[2]} 
+                alt={`${project.title}`}  /> */}
+                <div className={`${imgPtrs[project.id - 1] == 3 ? "translate-x-0 top-0 left-0" :imgPtrs[project.id - 1] > 3 ? "translate-x-[120%] top-0 left-0" : "-translate-x-[120%] top-0 left-0"} trans absolute top-0 left-0 max-[700px]:h-[250px] max-[500px]:h-[200px] h-[300px] w-full `}>
+                  <AsyncImage
+                    src={project.imgs[3]}
+                    style={{ width: "100%", height: "100%", objectFit : "contain"}}
+                    loader={<div style={{ background: '#888' }} />}
+                  />
+                </div>
+                {/* <img loading="lazy" src={project.imgs[3]} 
+                alt={`${project.title}`}  /> */}
                 { <button id={`rightBtn${project.id}`} onClick={() => moveImg(project.id, +1)} className={`${imgPtrs[project.id - 1] == 3 ? "opacity-0 pointer-events-none" : "opacity-100"} ${getCurrTheme() == 9 ? "hover:cursor-lobsterHover cursor-lobster" : "cursor-pointer"} absolute opacity-0  trans right-3 max-sm:right-2  z-20 text-white top-1/2 -translate-y-1/2 w-8 h-8 max-sm:w-6 max-sm:h-6 flex items-center justify-center rounded-md bg-third-color `}><FontAwesomeIcon icon={faAngleRight}  className="max-sm:text-" /></button>}
                 { <button id={`leftBtn${project.id}`} onClick={() => moveImg(project.id, -1)} className={` ${imgPtrs[project.id - 1] == 0 ? "opacity-0 pointer-events-none" : "opacity-100 pointer-events-auto"} ${getCurrTheme() == 9 ? "hover:cursor-lobsterHover cursor-lobster" : "cursor-pointer"} absolute opacity-0  trans left-3 max-sm:left-2  z-20 text-white top-1/2 -translate-y-1/2 w-8 h-8 max-sm:w-6 max-sm:h-6 flex items-center justify-center rounded-md  rotate-180 bg-third-color `}><FontAwesomeIcon icon={faAngleRight}  className="max-sm:text-" /></button>}
               </div>
@@ -198,6 +236,6 @@ const Portfolio = () => {
       </div>
     </motion.div>
   )
-}
+})
 
 export default Portfolio

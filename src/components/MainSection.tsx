@@ -2,14 +2,15 @@ import { Link } from "react-router-dom"
 import { useCont } from "../context/PortfolioContext"
 
 import MovingBalls from "../utilities/MovingBalls";
+import { memo } from "react";
 
-const MainSection = () => {
+const MainSection = memo(() => {
 
 
   const {getCurrTheme} = useCont();
   return (
     <div  id="mainSection" className='relative  flex flex-col width space-up '>
-      {getCurrTheme() != 8 && <MovingBalls />}
+      {getCurrTheme() !== 8 && <MovingBalls />}
       <Link to="/about" className={`z-20 text-sec-color uppercase font-semibold text-xl ${getCurrTheme() == 9 ? "cursor-lobsterHover" : "cursor-pointer"} z-10 w-fit trans hover:opacity-90`}>Hello, My name is Mahmoud</Link>
       <h1 className={`z-20  font-bold ${getCurrTheme() == 9  ? "title-font-lobster " : "title-font"} text-rare-color text-[110px] max-[500px]:text-[75px] -mt-4 max-[500px]:mt-0 z-0`}>
         I build <span className="max-[500px]:hidden">websites.</span></h1>
@@ -32,6 +33,6 @@ const MainSection = () => {
       
     </div>
   )
-}
+})
 
 export default MainSection

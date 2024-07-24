@@ -1,9 +1,10 @@
-import { useEffect } from "react";
+import { AsyncImage } from "loadable-image";
+import { memo, useEffect } from "react";
 import me from "../assets/me 2.jpg"
 import { useCont } from "../context/PortfolioContext"
 import {motion} from "framer-motion"
 import { useLocation } from "react-router-dom";
-const About = () => {
+const About = memo(() => {
   const loc = useLocation();
   const {getThemeChangerState, toggleThemeChangerState, getCurrTheme} = useCont();
   useEffect(() => {
@@ -29,13 +30,26 @@ const About = () => {
         <div 
         
         className=" -translate-x-[15%]   w-[800px] max-[850px]:hidden ">
-          <img src={me} alt="" className="  w-full h-full" />
+          <AsyncImage
+            
+            src={me}
+            style={{ width: "100%", height: "120%"}}
+            loader={<div style={{ background: '#888' }} />}
+          />
+          {/* <img src={me} alt="" className="  w-full h-full" /> */}
         </div>
 
         <div 
-        className="min-[850px]:hidden w-[500px] mx-auto translate-x-0 max-[450px]:w-[320px] max-[570px]:w-[400px] ">
-          <img src={me} alt="" className="  w-full h-full" />
+        
+        className="min-[850px]:hidden w-[500px] mx-auto translate-x-0 max-[450px]:w-[320px] max-[570px]:w-[400px] max-[500px]:h-[250px] max-[850px]:h-[350px] ">
+          {/* <img src={me} alt="" className="  w-full h-full" /> */}
+          <AsyncImage
+            src={me}
+            style={{ width: "100%", height: "100%"}}
+            loader={<div style={{ background: '#888' }} />}
+          />
         </div>
+        
         
         {/* For text */}
         <div className="flex flex-col justify-center items-center  max-[970px]:text-xl text-2xl text-text-color">
@@ -72,6 +86,6 @@ const About = () => {
 
     </motion.div>
   )
-}
+})
 
 export default About

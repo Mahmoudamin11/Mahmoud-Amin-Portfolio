@@ -1,17 +1,20 @@
-import  {  useEffect } from 'react'
+import  {  memo, useEffect } from 'react'
 import { useCont } from '../context/PortfolioContext';
 import { motion } from 'framer-motion';
 
-const MovingBalls = () => {
+const MovingBalls = memo(() => {
     const {getCurrTheme} = useCont();
-    let arr= [];
+    let arr: number[] = [];
     let leftPos = new Array();
     let topPos = new Array();
-    for(let i = 1; i <= 45; i++) { 
-        arr.push(i);
-    }
+    
     
     useEffect(() => { 
+
+        for(let i = 1; i <= 45; i++) { 
+            arr.push(i);
+        }
+        
         for(let i = 1 ; i <= 45; i++) { 
             
             let ball = document.getElementById(`ball${i}`);
@@ -41,6 +44,8 @@ const MovingBalls = () => {
                 ball!.style.backgroundColor = "var(--fourth-color)"
 
         }
+
+        
         
     }, [])
     
@@ -58,6 +63,6 @@ const MovingBalls = () => {
         }
     </div>
   )
-}
+})
 
 export default MovingBalls

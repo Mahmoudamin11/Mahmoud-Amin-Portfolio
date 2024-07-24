@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { memo, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { useCont } from "../context/PortfolioContext";
 
-const Footer = () => {
+const Footer = memo(() => {
     const date = new Date();
     const [year] = useState(date.getFullYear());
     // const {getCurrTheme} = useCont();
@@ -27,6 +27,6 @@ const Footer = () => {
         </div>
     </div>
   )
-}
+})
 
 export default Footer;

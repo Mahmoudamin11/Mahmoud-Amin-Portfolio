@@ -2,10 +2,10 @@ import MainSection from '../components/MainSection'
 import LatestProjects from '../components/LatestProjects'
 import { motion } from 'framer-motion'
 import { useLocation } from 'react-router-dom'
-import { useEffect } from 'react'
+import { memo, useEffect } from 'react'
 import { useCont } from '../context/PortfolioContext'
 
-const Home = () => {
+const Home = memo(() => {
   const loc = useLocation() ; 
   const {getThemeChangerState, toggleThemeChangerState} = useCont();
 
@@ -26,6 +26,6 @@ const Home = () => {
         
     </motion.div>
   )
-}
+})
 
 export default Home

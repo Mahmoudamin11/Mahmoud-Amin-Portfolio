@@ -7,7 +7,8 @@ import About from '../pages/About';
 import Footer from './Footer';
 import Menu from './Menu';
 import { AnimatePresence } from 'framer-motion';
-export const WholePage = () => {
+import { memo } from 'react';
+export const WholePage = memo(() => {
   const { getThemeChangerState, getCurrTheme, menuOpen } = useCont();
   const loc = useLocation();
 
@@ -26,4 +27,4 @@ export const WholePage = () => {
       <Footer />
     </div>
   );
-};
+});

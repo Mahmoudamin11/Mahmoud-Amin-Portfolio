@@ -2,10 +2,10 @@ import { Link } from "react-router-dom"
 import { useCont } from "../context/PortfolioContext"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 
 
-const Menu = () => {
+const Menu = memo(() => {
     const {getOpenedPage, getCurrTheme, openMenu} = useCont();
     const [rotate, setrotate] = useState(false);
     useEffect(() => { 
@@ -36,6 +36,6 @@ const Menu = () => {
         </button>
     </div>
   )
-}
+})
 
 export default Menu

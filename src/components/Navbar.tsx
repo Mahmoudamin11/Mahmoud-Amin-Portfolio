@@ -6,7 +6,8 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useCont } from '../context/PortfolioContext';
 import { Link } from 'react-router-dom';
-const Navbar = () => {
+import { memo } from 'react';
+const Navbar = memo(() => {
   
 
   const {toggleThemeChangerState, getOpenedPage, getCurrTheme, openMenu, toggleMark, menuOpen} = useCont();
@@ -58,6 +59,6 @@ const Navbar = () => {
         </ul>
     </div>
   )
-};
+});
 
 export default Navbar ;
