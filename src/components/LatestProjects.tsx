@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { useCont } from "../context/PortfolioContext";
-import { memo, useCallback, useRef } from "react";
+import { memo, useCallback } from "react";
 
 
 
