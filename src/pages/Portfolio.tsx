@@ -1,4 +1,8 @@
 import { useCont } from "../context/PortfolioContext"
+import mov1 from "../assets/portfolio/Movies_App/mov1.png"
+import mov2 from "../assets/portfolio/Movies_App/mov2.png"
+import mov3 from "../assets/portfolio/Movies_App/mov3.png"
+import mov4 from "../assets/portfolio/Movies_App/mov4.png"
 import linked1 from "../assets/portfolio/linkedIn/link1.png"
 import linked2 from "../assets/portfolio/linkedIn/link2.png"
 import linked3 from "../assets/portfolio/linkedIn/link3.png"
@@ -40,7 +44,7 @@ const Portfolio = memo(() => {
 
   const loc = useLocation();
   const {getCurrTheme} = useCont();
-  const [imgPtrs, setimgPtrs] = useState([0,0,0,0,0,0,0]);
+  const [imgPtrs, setimgPtrs] = useState([0,0,0,0,0,0,0,0]);
   
   const {getThemeChangerState, toggleThemeChangerState} = useCont();
   
@@ -53,13 +57,14 @@ const Portfolio = memo(() => {
   
 
   const projectsData = [
-    {id:1, title:"LikedIn Clone", txt:"Full-stack LinkedIn clone, using Firebase for the database, authentication, signing in with Google & Using Redux for storing the posts of the user.", imgs:[linked1, linked2, linked3, linked4], imgPtr:0 , date : "15 / 7 / 2024", link:"https://linkedin-clone-1fcc0.web.app/", colorCode: "#0077b5"},
-    {id:2, title:"Livin Furniture Store", txt:"Livin Furniture is a website for selling a lot of furniture types online.", imgs:[liv1, liv2, liv3, liv4], imgPtr:0 , date : "7 / 4 / 2024", link:"https://66124ca49678090008f41605--bright-muffin-273ec2.netlify.app/", colorCode: "#8FB77C"},
-    {id:3, title:"Countries Reset API", txt:"A website to get all the possible details about any country in the whole world.", imgs:[country1, country2, country3, country4], imgPtr:0 , date : "8 / 3 / 2024", link:"https://countries-rest-api-d1u2.vercel.app/", colorCode: "#2B3945"},
-    {id:4, title:"Mellifera Honey", txt:"A responsive landing page showing why Mellifera honey company is the best in the market.", imgs:[honey1, honey2, honey3, honey4], imgPtr:0 , date : "20 / 1 / 2023 ", link:"https://mahmoudamin11.github.io/Mellifera/", colorCode: "#D3A863"},
-    {id:5, title:"FitFlex GYM", txt:"A responsive landing page for  the features provided by the worldwide FitFlex GYM.", imgs:[fitflex1, fitflex2, fitflex3, fitflex4], imgPtr:0 , date : "7 / 1 / 2024", link:"https://mahmoudamin11.github.io/FitFlex-GYM/", colorCode: "#F46C38"},
-    {id:6, title:"Ride it Showroom", txt:"An online showroom website to explore the big world of cars easily.", imgs:[carSelling1, carSelling2, carSelling3, carSelling4], imgPtr:0 , date : "23 / 12 / 2023", link:"https://mahmoudamin11.github.io/Car_Selling/", colorCode: "#005CE5"},
-    {id:7, title:"Advanced XO Game", txt:"Advanced XO game, with unbeatable computer and 2 players feature.", imgs:[xo1, xo2, xo3, xo4], imgPtr:0 , date : "20 / 10 / 2023", link:"https://mahmoudamin11.github.io/Advanced-XO-Game/", colorCode: "#2C343F"},
+    {id:1, title:"Full-Stack Movies Finder APP", txt:"Full-stack movies finder app, using Firebase for as database, authentication, Redux tool-kit for state management", imgs:[mov1, mov2, mov3, mov4], imgPtr:0 , date : "7 / 9 / 2024", link:"https://movies-website-six-swart.vercel.app/", colorCode: "#134B70"},
+    {id:2, title:"Full-Stack LikedIn Clone", txt:"Full-stack LinkedIn clone, using Firebase for as database, authentication, signing in with Google & Using Redux for storing the posts of the user.", imgs:[linked1, linked2, linked3, linked4], imgPtr:0 , date : "15 / 7 / 2024", link:"https://linkedin-clone-1fcc0.web.app/", colorCode: "#0077b5"},
+    {id:3, title:"Livin Furniture Store", txt:"Livin Furniture is a website for selling a lot of furniture types online.", imgs:[liv1, liv2, liv3, liv4], imgPtr:0 , date : "7 / 4 / 2024", link:"https://66124ca49678090008f41605--bright-muffin-273ec2.netlify.app/", colorCode: "#8FB77C"},
+    {id:4, title:"Countries Reset API", txt:"A website to get all the possible details about any country in the whole world.", imgs:[country1, country2, country3, country4], imgPtr:0 , date : "8 / 3 / 2024", link:"https://countries-rest-api-d1u2.vercel.app/", colorCode: "#2B3945"},
+    {id:5, title:"Mellifera Honey", txt:"A responsive landing page showing why Mellifera honey company is the best in the market.", imgs:[honey1, honey2, honey3, honey4], imgPtr:0 , date : "20 / 1 / 2023 ", link:"https://mahmoudamin11.github.io/Mellifera/", colorCode: "#D3A863"},
+    {id:6, title:"FitFlex GYM", txt:"A responsive landing page for  the features provided by the worldwide FitFlex GYM.", imgs:[fitflex1, fitflex2, fitflex3, fitflex4], imgPtr:0 , date : "7 / 1 / 2024", link:"https://mahmoudamin11.github.io/FitFlex-GYM/", colorCode: "#F46C38"},
+    {id:7, title:"Ride it Showroom", txt:"An online showroom website to explore the big world of cars easily.", imgs:[carSelling1, carSelling2, carSelling3, carSelling4], imgPtr:0 , date : "23 / 12 / 2023", link:"https://mahmoudamin11.github.io/Car_Selling/", colorCode: "#005CE5"},
+    {id:8, title:"Advanced XO Game", txt:"Advanced XO game, with unbeatable computer and 2 players feature.", imgs:[xo1, xo2, xo3, xo4], imgPtr:0 , date : "20 / 10 / 2023", link:"https://mahmoudamin11.github.io/Advanced-XO-Game/", colorCode: "#2C343F"},
   ];
 
 
@@ -68,7 +73,6 @@ const Portfolio = memo(() => {
       let link = document.getElementById(`previewSite${i + 1}`);
       
       link!.style.backgroundColor =`${projectsData[i].colorCode}` ;
-      
       
     }
   }, [])
@@ -180,13 +184,10 @@ const Portfolio = memo(() => {
               {/* imgs carousal */}
               <div className="relative overflow-hidden max-[700px]:h-[250px] max-[500px]:h-[200px] h-[300px] group flex flex-col  w-[600px] max-[700px]:w-full">
                 
-                {/* <img loading="lazy" src={project.imgs[0]} 
-                alt={`${project.title}`}  /> */}
-
                 <div className={`${imgPtrs[project.id - 1] == 0 ? "translate-x-0 top-0 left-0" :imgPtrs[project.id - 1] > 0 ? "translate-x-[120%] top-0 left-0" : "-translate-x-[120%] top-0 left-0"} trans absolute top-0 left-0 max-[700px]:h-[250px] max-[500px]:h-[200px] h-[300px] w-full `}>
                   <AsyncImage
                     src={project.imgs[0]}
-                    style={{ width: "100%", height: "100%"}}
+                    style={{ width: "100%", height: "100%", objectFit: 'contain' }}
                     loader={<div style={{ background: '#888' }} />}
                   />
                 </div>
@@ -197,8 +198,7 @@ const Portfolio = memo(() => {
                     loader={<div style={{ background: '#888' }} />}
                   />
                 </div>
-                {/* <img loading="lazy" src={project.imgs[1]} 
-                alt={`${project.title}`}  /> */}
+                
                 <div className={`${imgPtrs[project.id - 1] == 2 ? "translate-x-0 top-0 left-0" :imgPtrs[project.id - 1] > 2 ? "translate-x-[120%] top-0 left-0" : "-translate-x-[120%] top-0 left-0"} trans absolute top-0 left-0 max-[700px]:h-[250px] max-[500px]:h-[200px] h-[300px] w-full `}>
                   <AsyncImage
                     src={project.imgs[2]}
@@ -206,8 +206,7 @@ const Portfolio = memo(() => {
                     loader={<div style={{ background: '#888' }} />}
                   />
                 </div>
-                {/* <img loading="lazy" src={project.imgs[2]} 
-                alt={`${project.title}`}  /> */}
+                
                 <div className={`${imgPtrs[project.id - 1] == 3 ? "translate-x-0 top-0 left-0" :imgPtrs[project.id - 1] > 3 ? "translate-x-[120%] top-0 left-0" : "-translate-x-[120%] top-0 left-0"} trans absolute top-0 left-0 max-[700px]:h-[250px] max-[500px]:h-[200px] h-[300px] w-full `}>
                   <AsyncImage
                     src={project.imgs[3]}
@@ -215,8 +214,7 @@ const Portfolio = memo(() => {
                     loader={<div style={{ background: '#888' }} />}
                   />
                 </div>
-                {/* <img loading="lazy" src={project.imgs[3]} 
-                alt={`${project.title}`}  /> */}
+                
                 { <button id={`rightBtn${project.id}`} onClick={() => moveImg(project.id, +1)} className={`${imgPtrs[project.id - 1] == 3 ? "opacity-0 pointer-events-none" : "opacity-100"} ${getCurrTheme() == 9 ? "hover:cursor-lobsterHover cursor-lobster" : "cursor-pointer"} absolute opacity-0  trans right-3 max-sm:right-2  z-20 text-white top-1/2 -translate-y-1/2 w-8 h-8 max-sm:w-6 max-sm:h-6 flex items-center justify-center rounded-md bg-third-color `}><FontAwesomeIcon icon={faAngleRight}  className="max-sm:text-" /></button>}
                 { <button id={`leftBtn${project.id}`} onClick={() => moveImg(project.id, -1)} className={` ${imgPtrs[project.id - 1] == 0 ? "opacity-0 pointer-events-none" : "opacity-100 pointer-events-auto"} ${getCurrTheme() == 9 ? "hover:cursor-lobsterHover cursor-lobster" : "cursor-pointer"} absolute opacity-0  trans left-3 max-sm:left-2  z-20 text-white top-1/2 -translate-y-1/2 w-8 h-8 max-sm:w-6 max-sm:h-6 flex items-center justify-center rounded-md  rotate-180 bg-third-color `}><FontAwesomeIcon icon={faAngleRight}  className="max-sm:text-" /></button>}
               </div>

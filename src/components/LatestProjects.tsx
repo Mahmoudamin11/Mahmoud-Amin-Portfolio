@@ -1,6 +1,6 @@
 import livin from "../assets/livin.png";
 import fitFlex from "../assets/fitFlex.jpg";
-import cars from "../assets/carselling.jpg";
+import movies from "../assets/movies.png";
 import honey from "../assets/Honey.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
@@ -17,10 +17,10 @@ const LatestProjects = memo(() => {
 
     // projects array
     const projects = [
-        {img:livin , title:"Livin Furniture Store", id:2},
-        {img:honey , title:"Mellifera Honey", id:4},
-        {img:fitFlex , title:"FitFlex Muscle GYM", id:5},
-        {img:cars , title:"Ride it showroom", id:6},
+        {img:movies , title:"Movies Finder App", id:1},
+        {img:livin , title:"Livin Furniture Store", id:3},
+        {img:honey , title:"Mellifera Honey", id:5},
+        {img:fitFlex , title:"FitFlex Muscle GYM", id:6},
     ]
     
     // Cool
@@ -51,20 +51,13 @@ const LatestProjects = memo(() => {
                         <div  key={p.id} className="flex trans flex-col items-center justify-center gap-5   ">
                             
                             <Link to='/portfolio' onClick={() => goToProject(p.id)} onMouseEnter={() => scrollProject(p.id, true)} onMouseLeave={() => scrollProject(p.id, false)}   
-                                className={` font-bold text-2xl titleLinks  ${index == 0 ?  "after:bg-[#8FB77C]" : index == 2 ? "after:bg-[#F46C38]" : index == 1 ? "after:bg-[#D3A863]" : index == 3 ? "after:bg-[#005CE5]"  :  "after:bg-sec-color"} after:trans before:trans  text-rare-color trans  ${getCurrTheme() == 9 ? "cursor-lobsterHover" : "cursor-pointer"}  `}>
+                                className={` font-bold text-2xl titleLinks  ${index == 1 ?  "after:bg-[#8FB77C]" : index == 3 ? "after:bg-[#F46C38]" : index == 2 ? "after:bg-[#D3A863]" : index == 0 ? "after:bg-[#508C9B]"  :  "after:bg-sec-color"} after:trans before:trans  text-rare-color trans  ${getCurrTheme() == 9 ? "cursor-lobsterHover" : "cursor-pointer"}  `}>
                                 {p.title}
                             </Link>
                             <div  className="group bg-fourth-color  relative w-64 h-80 overflow-hidden   ">
                                 <img  
                                     id={`${p.id}`} key={p.id} src={p.img} alt="" loading="lazy"
                                     className={`  duration-[1000ms] translate-0  transition-all `} />
-                                {/* <AsyncImage
-                                    id={`${p.id}`}
-                                    key={p.id}
-                                    src={p.img}
-                                    style={{ width: "100%", height: "100%", position : 'absolute', translate:"0px 0px", transitionDuration:'1000ms'}}
-                                    loader={<div style={{ background: '#888' }} />}
-                                /> */}
                             </div>
                         </div>
                     ))
