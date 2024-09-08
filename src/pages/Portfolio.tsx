@@ -67,6 +67,8 @@ const Portfolio = memo(() => {
     {id:8, title:"Advanced XO Game", txt:"Advanced XO game, with unbeatable computer and 2 players feature.", imgs:[xo1, xo2, xo3, xo4], imgPtr:0 , date : "20 / 10 / 2023", link:"https://mahmoudamin11.github.io/Advanced-XO-Game/", colorCode: "#2C343F"},
   ];
 
+  
+
 
   useEffect(() => { 
     for(let i = 0  ; i < 7;  i++) { 
