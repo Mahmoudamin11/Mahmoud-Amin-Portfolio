@@ -119,12 +119,12 @@ const Contact = () => {
                 </div>
                 <div className="flex items-stretch justify-center">
                     <div className="grid md:grid-cols-2">
-                        <div className="h-full pr-6">
-                            <p className="mt-3 mb-10 text-lg text-rare-color">
+                        <div className="h-full max-sm:pr-0 pr-6">
+                            <p className="mt-3 mb-10 text-lg text-rare-color max-sm:pl-2">
                                 Have a project or idea you'd like to discuss? I'm always open to new opportunities and collaborations. Whether it's a quick question or something more, feel free to drop me a message.
                             </p>
-                            <ul className="mb-6 md:mb-0">
-                                <li className="flex">
+                            <ul className="mb-6 md:mb-0 max-sm:flex flex-col max-sm:pl-2">
+                                <li className="flex ">
                                     <div className="flex h-10 w-10 items-center justify-center rounded bg-sec-color text-main-background">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                             fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"
@@ -142,7 +142,7 @@ const Contact = () => {
                                         <p className="text-text-color">Cairo, Egypt</p>
                                     </div>
                                 </li>
-                                <li className="flex">
+                                <li className="flex ">
                                     <div className="flex h-10 w-10 items-center justify-center rounded bg-sec-color text-main-background">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                             fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"
@@ -161,7 +161,7 @@ const Contact = () => {
                                         <p className="text-text-color">Mail: mahmoudamin123321@gmail.com</p>
                                     </div>
                                 </li>
-                                <li className="flex">
+                                <li className="flex ">
                                     <div className="flex h-10 w-10 items-center justify-center rounded bg-sec-color text-main-background">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                             fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"
@@ -181,7 +181,7 @@ const Contact = () => {
                         </div>
 
                         {/* Form */}
-                        <div className="card h-fit relative max-w-6xl p-5 md:px-10 md:py-3" id="form">
+                        <div className="card h-fit relative max-w-6xl max-sm:pl-2 p-5 md:px-10 md:py-3" id="form">
                             {isExploding &&
                                 <div className=' absolute w-full h-full top-0 left-0'>
                                     <Lottie animationData={confetti} loop={false} />
