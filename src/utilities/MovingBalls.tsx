@@ -43,16 +43,16 @@ const MovingBalls = memo(() => {
         
     }, [])
     
-  return (
-    <div className=''>
-        {
-            arr.map((b , index) => (
-                <span id={`ball${b}`} key={`ball${index}`} className={`z-10  animate-breathing w-[12px] h-[12px] ${getCurrTheme() == 9 ? "opacity-50" : ""}  rounded-full  absolute`}>
-                </span>
-            ))
-        }
-    </div>
-  )
+    return (
+        <div className=''>
+            {
+                arr.map((b , index) => (
+                    <span  id={`ball${b}`} key={`ball${index}`} className={`z-10 animate-wholeBall   w-[12px] h-[12px] ${getCurrTheme() == 9 ? "opacity-50" : ""}  rounded-full  absolute`}>
+                    </span>
+                ))
+            }
+        </div>
+    )
 })
 
 export default MovingBalls

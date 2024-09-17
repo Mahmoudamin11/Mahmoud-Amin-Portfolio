@@ -31,39 +31,45 @@ export default {
           '50%' : {'color': 'blue'},
           '100%' : {'color': 'red'},
         },
-        
-
-
-        breathing : {
+        moveBall: {
+          '0%': { transform: 'translate(0px , 0px)' },
+          '25%': { transform: 'translate(-1px, 1px)' },
+          '50%': { transform: 'translate(1px, 1px)' },
+          '75%': { transform: 'translate(1px, -0.5px)' },
+          '100%': { transform: 'translate(1px, -1px)' },
+        },
+        wholeBall : {
           '0%' : {
-            '-webkit-transform': 'scale(0.9)',
-            '-ms-transform': 'scale(0.9)',
-            'transform': 'scale(0.9)',
+            '-webkit-transform': 'translate(1px, 1px) scale(0.9)',
+            '-ms-transform': 'translate(1px, 1px) scale(0.9)',
+            'transform': 'translate(1px, 1px) scale(0.9)',
           },
 
           '25%' : {
-            '-webkit-transform': 'scale(1.2)',
-            '-ms-transform': 'scale(1.2)',
-            'transform': 'scale(1.2)',
+            '-webkit-transform': 'translate(0px, 0px) scale(1.2)',
+            '-ms-transform': 'translate(0px, 0px) scale(1.2)',
+            'transform': 'translate(0px, 0px) scale(1.2)',
           },
 
           '60%' : {
-            '-webkit-transform': 'scale(0.9)',
-            '-ms-transform': 'scale(0.9)',
-            'transform': 'scale(0.9)',
+            '-webkit-transform': 'translate(-1px, -1px) scale(0.9)',
+            '-ms-transform': 'translate(-1px, -1px) scale(0.9)',
+            'transform': 'translate(-1px, -1px) scale(0.9)',
           },
 
           '100%' : {
-            '-webkit-transform': 'scale(0.9)',
-            "-ms-transform": 'scale(0.9)',
-            'transform': 'scale(0.9)',
+            '-webkit-transform': 'translate(0px, 0px) scale(0.9)',
+            "-ms-transform": 'translate(0px, 0px) scale(0.9)',
+            'transform': 'translate(0px, 0px) scale(0.9)',
           }
         },
         
       },
       animation : { 
         "rainbowAnimateColors" : 'rainbowAnimateColors 2s linear infinite',
-        'breathing' : 'breathing 2s linear infinite'
+        'breathing' : 'breathing 2s linear infinite',
+        moveBall: 'moveBall 3s infinite',
+        wholeBall: 'wholeBall 2s ease-out infinite'
         
       },
       cursor :  {
