@@ -8,6 +8,7 @@ import Footer from './Footer';
 import Menu from './Menu';
 import { AnimatePresence } from 'framer-motion';
 import { memo } from 'react';
+import Contact from '../pages/Contact';
 export const WholePage = memo(() => {
   const { getThemeChangerState, getCurrTheme, menuOpen } = useCont();
   const loc = useLocation();
@@ -21,6 +22,7 @@ export const WholePage = memo(() => {
           <Route path="/" element={<Home />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
         {menuOpen && <Menu />}
       </AnimatePresence>

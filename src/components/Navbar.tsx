@@ -41,6 +41,10 @@ const Navbar = memo(() => {
               <span className='font-bold text-[16px]'>03</span>
               <span className=' text-main-text-color font-bold text-[16px]'>about</span>
             </Link>
+            <Link to="/contact" className={`link py-4 ${getOpenedPage() == "contact" ? "active" : ""}   flex ${getCurrTheme() == 9 ? "cursor-lobsterHover" : "cursor-pointer"} text-sm gap-2 items-center`}>
+              <span className='font-bold text-[16px]'>04</span>
+              <span className=' text-main-text-color font-bold text-[16px]'>Contact</span>
+            </Link>
             {/* Theme Changer */}
             <button onClick={() => toggleThemeChangerState()} className={`group bg-fourth-color w-14 h-14 rounded-full ${getCurrTheme() == 9 ? "cursor-lobsterHover" : "cursor-pointer"} flex items-center justify-center `}>
               <FontAwesomeIcon icon={faPaintRoller} className='text-xl group-hover:text-sec-color trans' />

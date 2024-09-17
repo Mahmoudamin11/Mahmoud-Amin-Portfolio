@@ -30,6 +30,10 @@ const Menu = memo(() => {
             <span className='font-light text-rare-color'>03</span>
             <span className='uppercase text-main-text-color font-bold max-[500px]:text-3xl text-4xl text-text-color'>about</span>
         </Link>
+        <Link onClick={() => openMenu()} to="/contact" className={`linkMenu   py-4 ${getOpenedPage() == "contact" ? "active" : ""}   flex items-center ${getCurrTheme() == 9 ? "cursor-lobsterHover" : "cursor-pointer"} text-sm gap-2 items-center`}>
+            <span className='font-light text-rare-color'>04</span>
+            <span className='uppercase text-main-text-color font-bold max-[500px]:text-3xl text-4xl text-text-color'>contact</span>
+        </Link>
 
         <button onClick={() => openMenu()} className="group">
             <FontAwesomeIcon  icon={faXmark} className={`group-hover:text-main-background text-rare-color ${rotate  ? "rotate-[360deg]"  : ""} trans ${getCurrTheme() == 9 ? "cursor-lobsterHover" : "cursor-pointer"} text-3xl absolute top-14 right-10 max-[500px]:right-8`} />

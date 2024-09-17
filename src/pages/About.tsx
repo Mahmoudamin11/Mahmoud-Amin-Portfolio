@@ -36,7 +36,7 @@ const About = memo(() => {
             style={{ width: "100%", height: "120%"}}
             loader={<div style={{ background: '#888' }} />}
           />
-          {/* <img src={me} alt="" className="  w-full h-full" /> */}
+          
         </div>
 
         <div 
