@@ -1,7 +1,7 @@
-import livin from "../assets/livin.png";
-import fitFlex from "../assets/fitFlex.jpg";
-import movies from "../assets/movies.png";
-import honey from "../assets/Honey.jpg";
+import livin from "../assets/livin.webp";
+import fitFlex from "../assets/fitFlex.webp";
+import movies from "../assets/movies.webp";
+import honey from "../assets/Honey.webp";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";

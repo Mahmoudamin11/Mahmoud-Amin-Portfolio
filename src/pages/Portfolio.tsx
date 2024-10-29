@@ -39,7 +39,6 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { motion } from "framer-motion"
 import { AsyncImage } from 'loadable-image';
 import redux from "../assets/portfolio/redux-logo-svgrepo-com.svg";
-
 const Portfolio = memo(() => {
 
   const loc = useLocation();

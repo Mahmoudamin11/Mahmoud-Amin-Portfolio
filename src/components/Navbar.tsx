@@ -1,4 +1,4 @@
-import me from '../assets/me3.png';
+import me from '../assets/me3.webp';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
 import { faPaintRoller } from "@fortawesome/free-solid-svg-icons";

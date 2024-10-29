@@ -110,7 +110,7 @@ const Contact = () => {
                             className={`${getCurrTheme() == 9  ? "title-font-lobster" : "title-font"} text-[110px] max-[500px]:text-[75px] text-rare-color font-bold`}>
                             Get in <span className='max-[500px]:hidden font-bold'>Touch</span>
                         </h2>
-                        <h1 className={`relative min-[500px]:hidden S${getCurrTheme() == 9  ? "title-font-lobster" : "title-font"} text-[110px] max-[500px]:text-[75px] text-rare-color text-center -mt-10 font-bold`}>
+                        <h1 className={`relative min-[500px]:hidden ${getCurrTheme() == 9  ? "title-font-lobster" : "title-font"} text-[110px] max-[500px]:text-[75px] text-rare-color text-center -mt-10 font-bold`}>
                             Touch.
                         </h1>
                         <p className="mx-auto  max-w-3xl text-xl text-text-color">
