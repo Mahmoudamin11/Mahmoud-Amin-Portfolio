@@ -7,6 +7,8 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { useCont } from "../context/PortfolioContext";
 import { memo, useCallback } from "react";
+import { Img } from "react-image";
+import Loader from "../utils/Loader";
 
 
 
@@ -55,7 +57,8 @@ const LatestProjects = memo(() => {
                                 {p.title}
                             </Link>
                             <div  className="group bg-fourth-color  relative w-64 h-80 overflow-hidden   ">
-                                <img  
+                                <Img
+                                    loader={<div className="w-full bg-[#888] h-full animate-pulse flex items-center justify-center"><Loader /></div>}
                                     id={`${p.id}`} key={p.id} src={p.img} alt="" loading="lazy"
                                     className={`  duration-[1000ms] translate-0  transition-all `} />
                             </div>

@@ -72,9 +72,7 @@ const Portfolio = memo(() => {
   useEffect(() => { 
     for(let i = 0  ; i <= 7;  i++) { 
       let link = document.getElementById(`previewSite${i + 1}`);
-      
       link!.style.backgroundColor =`${projectsData[i].colorCode}` ;
-      
     }
   }, [])
 
