@@ -1,5 +1,5 @@
-import MainSection from '../components/MainSection'
-import LatestProjects from '../components/LatestProjects'
+import MainSection from '../features/home/mainSection/MainSection'
+import LatestProjects from '../features/home/latestProjects/LatestProjects'
 import { motion } from 'framer-motion'
 import { useLocation } from 'react-router-dom'
 import { memo, useEffect } from 'react'
@@ -14,6 +14,7 @@ const Home = memo(() => {
       toggleThemeChangerState();
     }
   }, [loc.pathname])
+  
   return (
     <motion.div
     initial={{opacity: 0, translateY:"20px", transitionDuration:"150ms"}}

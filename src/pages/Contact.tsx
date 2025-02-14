@@ -15,7 +15,7 @@ const Contact = () => {
     const [isExploding, setIsExploding] = useState(false) 
     const [displayedWord, setDisplayedWord] = useState('Send Message')
     const loc = useLocation();
-    const {getThemeChangerState, toggleThemeChangerState, getCurrTheme} = useCont();
+    const {getThemeChangerState, toggleThemeChangerState, theme} = useCont();
     useEffect(() => {
         if (getThemeChangerState() == 1) { 
         toggleThemeChangerState();
@@ -30,10 +30,7 @@ const Contact = () => {
 
     const sendEmail = (e: any) => {
         e.preventDefault();
-
-        
         setError('');
-        
         if (!name) {
             setError('Name is required');
             return;
@@ -95,8 +92,6 @@ const Contact = () => {
         setMsg(e.target.value)
     };
     
-
-        
     return (
         <motion.section
         initial={{opacity: 0, translateY:"20px", transitionDuration:"150ms"}}
@@ -107,10 +102,10 @@ const Contact = () => {
                 <div className="mb-4">
                     <div className="mb-6 max-w-3xl text-center sm:text-center md:mx-auto md:mb-12">
                         <h2
-                            className={`${getCurrTheme() == 9  ? "title-font-lobster" : "title-font"} text-[110px] max-[500px]:text-[75px] text-rare-color font-bold`}>
+                            className={`${theme == 9  ? "title-font-lobster" : "title-font"} text-[110px] max-[500px]:text-[75px] text-rare-color font-bold`}>
                             Get in <span className='max-[500px]:hidden font-bold'>Touch</span>
                         </h2>
-                        <h1 className={`relative min-[500px]:hidden ${getCurrTheme() == 9  ? "title-font-lobster" : "title-font"} text-[110px] max-[500px]:text-[75px] text-rare-color text-center -mt-10 font-bold`}>
+                        <h1 className={`relative min-[500px]:hidden ${theme == 9  ? "title-font-lobster" : "title-font"} text-[110px] max-[500px]:text-[75px] text-rare-color text-center -mt-10 font-bold`}>
                             Touch.
                         </h1>
                         <p className="mx-auto  max-w-3xl text-xl text-text-color">
@@ -194,20 +189,20 @@ const Contact = () => {
                                     <div className="mx-0 mb-1 sm:mb-4">
                                         <div className="mx-0 mb-1 sm:mb-4">
                                             <label htmlFor="name" className="pb-1 text-xs uppercase tracking-wider"></label>
-                                            <input type="text" id="name" value={name} onChange={changeName} autoComplete="given-name" placeholder="Your name" className={`mb-2 w-full  rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md ${getCurrTheme() == 8 || getCurrTheme() == 2 ? "text-fourth-color":"text-text-color"} ${getCurrTheme() == 9 ? "cursor-lobsterHover focus:cursor-lobster" : ""} outline-none focus:border-third-color`} name="name" />
+                                            <input type="text" id="name" value={name} onChange={changeName} autoComplete="given-name" placeholder="Your name" className={`mb-2 w-full  rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md ${theme == 8 || theme == 2 ? "text-fourth-color":"text-text-color"} ${theme == 9 ? "cursor-lobsterHover focus:cursor-lobster" : ""} outline-none focus:border-third-color`} name="name" />
                                         </div>
                                         <div className="mx-0 mb-1 sm:mb-4">
                                             <label htmlFor="email" className="pb-1 text-xs uppercase tracking-wider"></label>
-                                            <input type="email" id="email" value={email} onChange={changeEmail} autoComplete="email" placeholder="Your email address" className={`mb-2 w-full  rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md ${getCurrTheme() == 8 || getCurrTheme() == 2 ? "text-fourth-color":"text-text-color"} ${getCurrTheme() == 9 ? "cursor-lobsterHover focus:cursor-lobster" : ""} outline-none focus:border-third-color`} name="email" />
+                                            <input type="email" id="email" value={email} onChange={changeEmail} autoComplete="email" placeholder="Your email address" className={`mb-2 w-full  rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md ${theme == 8 || theme == 2 ? "text-fourth-color":"text-text-color"} ${theme == 9 ? "cursor-lobsterHover focus:cursor-lobster" : ""} outline-none focus:border-third-color`} name="email" />
                                         </div>
                                     </div>
                                     <div className={`mx-0 mb-1 sm:mb-4 `}>
                                         <label htmlFor="textarea" className="pb-1 text-xs uppercase tracking-wider"></label>
-                                        <textarea id="textarea" value={msg} onChange={changeMSG} name="textarea" maxLength={500} cols={30} rows={5} placeholder="Write your message..." className={`mb-2 w-full  rounded-md border border-gray-400 max-h-[200px] py-2 pl-2 pr-4 shadow-md ${getCurrTheme() == 8 || getCurrTheme() == 2 ? "text-fourth-color":"text-text-color"} ${getCurrTheme() == 9 ? "cursor-lobsterHover focus:cursor-lobster" : ""} outline-none focus:border-third-color`}></textarea>
+                                        <textarea id="textarea" value={msg} onChange={changeMSG} name="textarea" maxLength={500} cols={30} rows={5} placeholder="Write your message..." className={`mb-2 w-full  rounded-md border border-gray-400 max-h-[200px] py-2 pl-2 pr-4 shadow-md ${theme == 8 || theme == 2 ? "text-fourth-color":"text-text-color"} ${theme == 9 ? "cursor-lobsterHover focus:cursor-lobster" : ""} outline-none focus:border-third-color`}></textarea>
                                     </div>
                                 </div>
                                 <div className="text-center">
-                                    <button type="submit" className={`w-full bg-sec-color trans hover:opacity-80 text-main-background font-bold px-6 py-3 font-xl rounded-md sm:mb-0 ${getCurrTheme() == 9 ? "cursor-lobsterHover" : "cursor-pointer"} outline-text-color`}>{displayedWord}</button>
+                                    <button type="submit" className={`w-full bg-sec-color trans hover:opacity-80 text-main-background font-bold px-6 py-3 font-xl rounded-md sm:mb-0 ${theme == 9 ? "cursor-lobsterHover" : "cursor-pointer"} outline-text-color`}>{displayedWord}</button>
                                 </div>
                             </form>
                             {error && (

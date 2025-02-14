@@ -98,6 +98,26 @@
   .body-font { 
     font-family: "Inter", sans-serif;
   }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for Firefox */
+  .hide-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+    .scroll-container::-webkit-scrollbar {
+      width: 0px;
+    }
+  
+    /* Show scrollbar on hover */
+    .scroll-container:hover::-webkit-scrollbar {
+      width: 4px;
+      background-color: rgba(255, 255, 255, 0.2);
+    }
   
   .trans { 
     @apply transition-all duration-[400ms] ;

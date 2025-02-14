@@ -2,12 +2,10 @@ import ThemesChanger from "./components/ThemesChanger"
 import { WholePage } from "./components/WholePage"
 import PortfolioContext from "./context/PortfolioContext"
 
-
-function App() {
-  
+const  App = () => {
   return (
     <PortfolioContext>
-      <div className={`w-full h-full `}>
+      <div className={`w-full h-full`}>
         {/* theme changer */}
         <ThemesChanger />
         <WholePage />
