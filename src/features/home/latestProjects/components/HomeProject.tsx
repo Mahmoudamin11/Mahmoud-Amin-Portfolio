@@ -17,7 +17,7 @@ const HomeProject = memo(({theme, project, index}:HomePrject) => {
         <a href={project.link} target="_blank" className={`flex trans flex-col items-center justify-center gap-5 ${theme === 9 ? "cursor-lobsterHover" : "cursor-pointer"}`}>
             <div
                 className={`font-bold text-2xl titleLinks 
-                    ${index === 1 ? "after:bg-[#8FB77C]" : index === 3 ? "after:bg-[#F46C38]" : index === 2 ? "after:bg-[#D3A863]" : "after:bg-[#508C9B]"} 
+                    ${index === 2 ? "after:bg-[#8FB77C]" : index === 3 ? "after:bg-[#D3A863]" : index === 0 ? "after:bg-[#C1C1C1]" : "after:bg-[#508C9B]"} 
                     after:trans before:trans text-rare-color trans 
                     ${theme === 9 ? "cursor-lobsterHover" : "cursor-pointer"}`}>
                 {project.title}

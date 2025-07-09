@@ -3,20 +3,20 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { memo } from "react";
 import { Link } from "react-router-dom";
 import { useCont } from "../../../context/PortfolioContext";
-import fitFlex from "./assets/fitFlex.webp";
 import honey from "./assets/Honey.webp";
 import livin from "./assets/livin.webp";
 import movies from "./assets/movies.webp";
+import styleClub from "./assets/styleClub.png";
 import HomeProject from "./components/HomeProject";
 
 const LatestProjects = memo(() => {
     const { theme } = useCont();
 
     const projects = [
-        {img:movies , title:"Movies Finder App", id:1, link:"https://movies-website-six-swart.vercel.app/"},
-        {img:livin , title:"Livin Furniture Store", id:3, link:"https://66124ca49678090008f41605--bright-muffin-273ec2.netlify.app/"},
-        {img:honey , title:"Mellifera Honey", id:5, link:"https://mahmoudamin11.github.io/Mellifera/"},
-        {img:fitFlex , title:"FitFlex Muscle GYM", id:6, link:"https://mahmoudamin11.github.io/FitFlex-GYM/"},
+        {img:styleClub , title:"Style Club Fashion", id:Number(crypto.randomUUID()), link:"https://style-club-fashion.vercel.app/"},
+        {img:movies , title:"Movies Finder App", id:Number(crypto.randomUUID()), link:"https://movies-website-six-swart.vercel.app/"},
+        {img:livin , title:"Livin Furniture Store", id:Number(crypto.randomUUID()), link:"https://66124ca49678090008f41605--bright-muffin-273ec2.netlify.app/"},
+        {img:honey , title:"Mellifera Honey", id:Number(crypto.randomUUID()), link:"https://mahmoudamin11.github.io/Mellifera/"},
     ];
     return (
         <div className="flex flex-col space-up width mb-24">
